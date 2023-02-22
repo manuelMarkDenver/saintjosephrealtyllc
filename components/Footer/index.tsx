@@ -26,18 +26,19 @@ const Footer = () => {
             />
           </Box>
           <Stack direction="column">
-            <Typography className="mb-2" variant="h6">
+            <Typography variant="h6" sx={{ marginBottom: "0.5rem" }}>
               Contacts
             </Typography>
-            <Typography className="mb-2" variant="caption">
-              Total Free (888)781-6227
+            <Typography variant="caption" sx={{ marginBottom: "0.5rem" }}>
+              Toll Free (888)781-6227
             </Typography>
-            <Typography className="mb-2" variant="caption">
+            <Typography variant="caption" sx={{ marginBottom: "0.5rem" }}>
               Efax (857)557-7188
             </Typography>
-            <Typography className="mb-2" variant="caption">
+            <Typography variant="caption" sx={{ marginBottom: "0.5rem" }}>
               Local (857)557-6558
             </Typography>
+
             <Stack direction="row">
               <IconButton>
                 <FacebookIcon className="text-white"/>
@@ -51,16 +52,16 @@ const Footer = () => {
             </Stack>
           </Stack>
           <Stack direction="column">
-            <Typography className="mb-2" variant="h6">
+            <Typography variant="h6" sx={{ marginBottom: "0.5rem" }}>
               Address
             </Typography>
-            <Typography className="mb-2" variant="caption">
+            <Typography variant="caption" sx={{ marginBottom: "0.5rem" }}>
               123 your street name,
             </Typography>
-            <Typography className="mb-2" variant="caption">
+            <Typography variant="caption" sx={{ marginBottom: "0.5rem" }}>
               City name, Country,{" "}
             </Typography>
-            <Typography className="mb-2" variant="caption">
+            <Typography variant="caption" sx={{ marginBottom: "0.5rem" }}>
               post code
             </Typography>
           </Stack>

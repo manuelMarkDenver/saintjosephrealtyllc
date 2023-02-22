@@ -1,12 +1,18 @@
+'use client'
+
 // import { Inter } from '@next/font/google'
+
+import { Container } from "@mui/material";
+import Header from "./Header";
 
 // const inter = Inter({ subsets: ['latin'] })
 
-export default function Homepage() {
+const Homepage = () => {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline text-red-400">
-      </h1>
-    </>
+    <Container className="py-24">
+      <Header />
+    </Container>
   );
 }
+
+export default Homepage

@@ -17,7 +17,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Stack } from "@mui/material";
 
-const pages = ["About Us", "Projects", "Partners", "Blogs", "Contact Us"];
+const pages = ["About Us", "Services", "Projects", "Mission", "Vision", "Contact Us"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
@@ -126,8 +126,6 @@ function Navbar() {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "roboto",
-              fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
