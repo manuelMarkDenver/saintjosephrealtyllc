@@ -15,6 +15,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import { Stack } from "@mui/material";
 
 import logo from "/images/navbar/site-logo.png";
 
@@ -45,30 +46,43 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl" sx={{ 
+    <AppBar
+      position="static"
+      sx={{
         bgcolor: "#eaeaea",
-        color: "black"
-       }}>
+        color: "black",
+      }}
+      className={"py-5"}
+    >
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Image src={"/images/navbar/site-logo.png"} alt="site-logo" width={62} height={62} className="mr-3" />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            Saint Joseph Realty LLC
-          </Typography>
+          <Stack direction="row">
+            <Image
+              src={"/images/navbar/site-logo.png"}
+              alt="site-logo"
+              width={62}
+              height={62}
+              className="mr-3"
+            />
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="/"
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "roboto",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+                alignSelf: "flex-end"
+              }}
+            >
+              Saint Joseph Realty LLC
+            </Typography>
+          </Stack>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -106,6 +120,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
+
           <Typography
             variant="h5"
             noWrap
@@ -124,19 +139,21 @@ function ResponsiveAppBar() {
           >
             Saint Joseph Realty LLC
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, justifyContent: "flex-end" }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
+                className="text-black"
               >
                 {page}
               </Button>
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -164,7 +181,7 @@ function ResponsiveAppBar() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
