@@ -1,4 +1,7 @@
+"use client";
+
 import "./globals.css";
+import { StyledEngineProvider } from "@mui/styled-engine";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -15,9 +18,11 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <StyledEngineProvider injectFirst>
+          <Navbar />
+          {children}
+          <Footer />
+        </StyledEngineProvider>
       </body>
     </html>
   );
