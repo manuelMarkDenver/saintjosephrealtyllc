@@ -17,12 +17,10 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Stack } from "@mui/material";
 
-import logo from "/images/navbar/site-logo.png";
-
 const pages = ["About Us", "Projects", "Partners", "Blogs", "Contact Us"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function ResponsiveAppBar() {
+function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -58,7 +56,7 @@ function ResponsiveAppBar() {
         <Toolbar disableGutters>
           <Stack direction="row">
             <Image
-              src={"/images/navbar/site-logo.png"}
+              src={"/images/site-logo.png"}
               alt="site-logo"
               width={62}
               height={62}
@@ -74,7 +72,7 @@ function ResponsiveAppBar() {
                 display: { xs: "none", md: "flex" },
                 fontFamily: "roboto",
                 fontWeight: 700,
-                letterSpacing: ".3rem",
+                letterSpacing: ".1rem",
                 color: "inherit",
                 textDecoration: "none",
                 alignSelf: "flex-end"
@@ -130,7 +128,7 @@ function ResponsiveAppBar() {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "monospace",
+              fontFamily: "roboto",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
@@ -145,8 +143,7 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-                className="text-black"
+                sx={{ my: 2, color: "black", display: "block", textTransform: "capitalize" }}
               >
                 {page}
               </Button>
@@ -187,4 +184,4 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default Navbar;
