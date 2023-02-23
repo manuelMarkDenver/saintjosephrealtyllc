@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
+import Homepage from "./Homepage";
 
-import Homepage from "./Homepage/page";
 
 const imagesDir = path.join(process.cwd(), "public/images/projects/project-1");
 const imageNames = fs.readdirSync(imagesDir);
