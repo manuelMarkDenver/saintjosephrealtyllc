@@ -1,15 +1,15 @@
-"use client";
 
+
+import Footer from "./components/Footer";
+import StyledEngineWrapper from "./StyledEngineWrapper";
+import Navbar from "./components/Navbar";
 import "./globals.css";
-import { StyledEngineProvider } from "@mui/styled-engine";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
-export default function RootLayout({
-  children,
-}: {
+interface Props {
   children: React.ReactNode;
-}) {
+}
+
+export default function RootLayout({ children }: Props) {  
   return (
     <html lang="en">
       {/*
@@ -18,11 +18,9 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <StyledEngineProvider injectFirst>
-          <Navbar />
-          {children}
-          <Footer />
-        </StyledEngineProvider>
+        <Navbar />
+        <StyledEngineWrapper>{children}</StyledEngineWrapper>
+        <Footer />
       </body>
     </html>
   );

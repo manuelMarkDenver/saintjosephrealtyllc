@@ -1,13 +1,19 @@
-// import { Inter } from '@next/font/google'
+import path from "path";
+import fs from "fs";
 
-import Homepage from "./homepage/page";
+import Homepage from "./Homepage/page";
 
-// const inter = Inter({ subsets: ['latin'] })
+const imagesDir = path.join(process.cwd(), "public/images/projects/project-1");
+const imageNames = fs.readdirSync(imagesDir);
 
-export default function Home() {
+console.log(typeof imageNames);
+
+const Page = () => {
   return (
     <main>
-      <Homepage />
+      <Homepage images={imageNames} />
     </main>
-  )
-}
+  );
+};
+
+export default Page;
