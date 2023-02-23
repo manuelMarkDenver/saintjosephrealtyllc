@@ -6,14 +6,6 @@ import Grid2 from "@mui/material/Unstable_Grid2"; // Grid version 2
 import Bar from "../homepage/components/Bar";
 import PhotoSlider from "../homepage/components/PhotoSlider";
 
-interface MyObject {
-  [key: string]: string;
-}
-
-interface MyArray {
-  MyObjects: MyObject[]
-}
-
 const Homepage = (props: any) => {
   return (
     <>
@@ -174,7 +166,11 @@ const Homepage = (props: any) => {
         </Box>
 
         {/* Projects */}
-        <PhotoSlider props={props}/>
+        <Box>
+          <Container className="py-24">
+            <PhotoSlider props={props} />
+          </Container>
+        </Box>
       </Box>
     </>
   );
