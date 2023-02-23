@@ -4,8 +4,8 @@ import Image from "next/image";
 
 import { Box, Container, IconButton, Stack, Typography } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from '@mui/icons-material/Twitter';
-import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from "@mui/icons-material/Twitter";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 const Footer = () => {
   return (
@@ -41,13 +41,13 @@ const Footer = () => {
 
             <Stack direction="row">
               <IconButton>
-                <FacebookIcon className="text-white"/>
+                <FacebookIcon className="text-white" />
               </IconButton>
               <IconButton>
-                <TwitterIcon className="text-white"/>
+                <TwitterIcon className="text-white" />
               </IconButton>
               <IconButton>
-                <InstagramIcon className="text-white"/>
+                <InstagramIcon className="text-white" />
               </IconButton>
             </Stack>
           </Stack>
@@ -56,13 +56,13 @@ const Footer = () => {
               Address
             </Typography>
             <Typography variant="caption" sx={{ marginBottom: "0.5rem" }}>
-              123 your street name,
+              35 Village Rd Suite 100
             </Typography>
             <Typography variant="caption" sx={{ marginBottom: "0.5rem" }}>
-              City name, Country,{" "}
+              Middleton, MA, United States{" "}
             </Typography>
             <Typography variant="caption" sx={{ marginBottom: "0.5rem" }}>
-              post code
+              01949
             </Typography>
           </Stack>
         </Stack>

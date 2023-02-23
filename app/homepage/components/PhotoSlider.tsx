@@ -9,7 +9,6 @@ import { Button, Stack, Typography } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2"; // Grid version 2
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-import Projects from "./Projects";
 
 const PhotoSlider = ({ props }: any) => {
   const imagesArr = props.images.slice().filter((image: string) => {
@@ -22,8 +21,6 @@ const PhotoSlider = ({ props }: any) => {
       newArr.push({
         original: `/images/projects/project-1/${images[index]}`,
         thumbnail: `/images/projects/project-1/${images[index]}`,
-        thumbnailTitle: "Before",
-        originalTitle: "After",
       });
     }
     return newArr;
@@ -32,6 +29,7 @@ const PhotoSlider = ({ props }: any) => {
   const settings: any = {
     showPlayButton: false,
     thumbnailPosition: "right",
+    additionalClass: "featured-slide, featured-thumb",
   };
 
   return (
@@ -78,7 +76,6 @@ const PhotoSlider = ({ props }: any) => {
           </Typography>
         </Grid2>
       </Grid2>
-      {/* <Slider {...settings}>{renderProjects()}</Slider> */}
       <ImageGallery items={imagesMutatedArray(imagesArr)} {...settings} />
       <Grid2 container className="my-10">
         <Grid2 xs={12} md={4}>
@@ -108,11 +105,21 @@ const PhotoSlider = ({ props }: any) => {
       </Grid2>
       <Grid2 container className="my-10">
         <Grid2 xs={12} md={4}>
-        <Typography component="h6" variant="h4" className="text-gray-500">$2.000.000</Typography>
-
+          <Typography component="h6" variant="h4" className="text-gray-500">
+            $2.000.000
+          </Typography>
         </Grid2>
-        <Grid2 xs={12} md={8} className="flex xs:justify-center md:justify-end items-center">
-          <Button variant="outlined" className="border-creamish bg-darkish text-white py-2 px-20">LEARN MORE</Button>
+        <Grid2
+          xs={12}
+          md={8}
+          className="flex xs:justify-center md:justify-end items-center"
+        >
+          <Button
+            variant="outlined"
+            className="border-creamish bg-darkish text-white py-2 px-20"
+          >
+            LEARN MORE
+          </Button>
         </Grid2>
       </Grid2>
     </>
