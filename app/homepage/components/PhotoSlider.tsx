@@ -1,3 +1,5 @@
+'use client'
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,7 +8,9 @@ import Image from "next/image";
 import Container from "@mui/material/Container";
 
 const PhotoSlider = ({ props }: any) => {
-  const imagesArr = props.images.slice();
+  const imagesArr = props.images.slice().filter((image: string) => {
+    return (!/\.(mp4)$/.test(image));
+  });
 
   const settings = {
     className: "center",

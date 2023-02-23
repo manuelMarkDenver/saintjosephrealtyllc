@@ -3,8 +3,8 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import Grid2 from "@mui/material/Unstable_Grid2"; // Grid version 2
-import Bar from "./components/Bar";
-import PhotoSlider from "./components/PhotoSlider";
+import Bar from "../homepage/components/Bar";
+import PhotoSlider from "../homepage/components/PhotoSlider";
 
 interface MyObject {
   [key: string]: string;
