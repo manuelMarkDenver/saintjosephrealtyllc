@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Container, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Slider from "react-slick";
-import ProjCard from "./components/Card";
 import ProjectCard from "./components/ProjectCard";
 
 const ProjectList = (props: any) => {
@@ -54,7 +53,7 @@ const ProjectList = (props: any) => {
         <Slider {...settings}>
           {data &&
             data.map((project, index) => (
-              <ProjCard key={index} props={project} />
+              <ProjectCard key={index} props={project} />
             ))}
         </Slider>
       </Container>

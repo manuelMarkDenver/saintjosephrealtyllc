@@ -9,6 +9,7 @@ import Offers from "./Offers";
 import Services from "./Services";
 import MissionVision from "./MissionVision";
 import Projects from "./projects";
+import Contact from "./contact";
 
 const Homepage = (props: any) => {
   return (
@@ -84,6 +85,9 @@ const Homepage = (props: any) => {
 
         {/* Mission Vision */}
         <MissionVision />
+
+        {/* Contact */}
+        <Contact />
       </Box>
     </>
   );

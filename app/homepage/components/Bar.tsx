@@ -6,7 +6,7 @@ const Bar = (props: any) => {
   const propsArr = Object.values(props)
 
   const barProps = [
-    "w-32", "mb-2", "h-4"
+    "w-32", "mb-2", "md:h-4", "h-2"
   ]
 
 

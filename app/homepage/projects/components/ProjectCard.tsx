@@ -1,64 +1,67 @@
 "use client";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Image from "next/image";
-import { Box, Button, Stack, Typography } from "@mui/material";
-import Grid2 from "@mui/material/Unstable_Grid2"; // Grid version 2
-import "react-image-gallery/styles/css/image-gallery.css";
-import PhotoSlider from "./PhotoSlider";
+import { useEffect, useState } from "react";
 
-const ProjectCard = ({ props }: any) => {
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@mui/material";
+
+interface Project {
+  id: number;
+  project: string;
+  year: number;
+  address: string;
+  specs: string;
+  description: string;
+  price: string;
+}
+
+interface Props {
+  props: Project;
+}
+
+const clickHandler = (e: any) => {
+  console.log(e);
+};
+
+const ProjectCard = (props: Props) => {
+  const { id, project, year, address, specs, description, price } = props.props;
+
+  const [projectId, setProjectId] = useState(null || 0);
+
+  const clickHandler = (projectId: number) => {
+    setProjectId(projectId);
+  };
+
   return (
-    <>
-      <PhotoSlider props={props} />
-
-      <Grid2 container className="my-10">
-        <Grid2 xs={12} md={4}>
-          <Typography component="h3" variant="h5" className="text-darkish mb-2">
-            8 Willowwood Mattapan
-          </Typography>
-          <Typography component="p" variant="caption" className="text-gray-400">
-            3 BEDROOM HOUSES IN BEAUTIFUL SUBURBS
-          </Typography>
-        </Grid2>
-        <Grid2 xs={12} md={8}>
-          <Typography
-            component="p"
-            variant="caption"
-            className="text-justify text-gray-500"
-          >
-            Equipped with air conditioning, private pool, 3 on-suite bedrooms
-            and a spacious open living room kitchen area, Sunshine Bay
-            Residences are an excellent choice for anyone dreaming of their own
-            safe haven. Located in a peaceful, child-friendly neighborhood,
-            Sunshine Bay has all the amenities that you could expect from a
-            suburb voted 'best in the state' for 3 running years. Whether you
-            want to play soccer with your kids on the lawn, or invite friends
-            over for dinner, there's space for it at Sunshine Bay.
-          </Typography>
-        </Grid2>
-      </Grid2>
-      <Grid2 container className="my-10">
-        <Grid2 xs={12} md={4}>
-          <Typography component="h6" variant="h4" className="text-gray-500">
-            $2.000.000
-          </Typography>
-        </Grid2>
-        <Grid2
-          xs={12}
-          md={8}
-          className="flex xs:justify-center md:justify-end items-center"
-        >
-          <Button
-            variant="outlined"
-            className="border-creamish bg-darkish text-white py-2 px-20"
-          >
-            LEARN MORE
-          </Button>
-        </Grid2>
-      </Grid2>
-    </>
+    <Card className="mr-5 text-center relative rounded-lg shadow-lg">
+      <CardMedia
+        className="h-96 object-cover"
+        image="https://api.lorem.space/image/house?w=300&h=300"
+      />
+      <Box
+        sx={{ clipPath: "polygon(0 62%, 100% 41%, 100% 100%, 0% 100%);" }}
+        className="absolute bottom-0 w-full h-96 bg-white z-0"
+      ></Box>
+      <CardContent className="z-50 text-gray-700 relative">
+        <Typography gutterBottom variant="h5" component="div">
+          {project}
+        </Typography> 
+        <Typography variant="body2">{address}</Typography>
+        <Typography variant="body2">{year}</Typography>
+      </CardContent>
+      <CardActions className="flex justify-center items-center">
+        <Button size="small" onClick={() => clickHandler(id)}>
+          Learn More
+        </Button>
+      </CardActions>
+    </Card>
   );
 };
 
