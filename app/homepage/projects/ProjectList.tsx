@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import ProjCard from "./components/Card";
 import ProjectCard from "./components/ProjectCard";
 
-const ProjectList = () => {
+const ProjectList = (props: any) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
