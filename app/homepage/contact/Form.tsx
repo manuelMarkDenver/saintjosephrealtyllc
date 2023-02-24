@@ -1,43 +1,26 @@
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
-
-const useStyles = makeStyles((theme) => ({
-  form: {
-    display: 'flex',
-    flexDirection: 'column',
-    maxWidth: '400px',
-    margin: '0 auto',
-  },
-  textField: {
-    margin: '8px 0',
-  },
-  submitButton: {
-    marginTop: '16px',
-  },
-}));
+import React, { useState } from "react";
+import { FormControl, FormLabel, TextField, Button } from "@mui/material";
 
 function Form() {
-  const classes = useStyles();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    console.log('Name:', name);
-    console.log('Email:', email);
+    console.log("Name:", name);
+    console.log("Email:", email);
   };
 
   return (
-    <form className={classes.form} onSubmit={handleSubmit}>
+    <form
+      className="flex flex-col max-w- my-0 mx-auto"
+      onSubmit={handleSubmit}
+    >
       <FormControl>
         <FormLabel>Name</FormLabel>
         <TextField
           required
-          className={classes.textField + ` shadow-lg`}
+          className={`my-2 shadow-lg`}
           value={name}
           onChange={(event) => setName(event.target.value)}
           variant="outlined"
@@ -47,7 +30,7 @@ function Form() {
         <FormLabel>Email</FormLabel>
         <TextField
           required
-          className={classes.textField + ` shadow-lg`}
+          className={`my-2 shadow-lg`}
           type="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
@@ -55,7 +38,7 @@ function Form() {
         />
       </FormControl>
       <Button
-        className={classes.submitButton + ` bg-darkish text-white hover:bg-creamish hover:text-black hover:border-black shadow-lg`}
+        className="mt-10 py-4 px-10 rounded-lg bg-darkish text-white border-white hover:bg-creamish hover:text-black hover:border-darkish hover:font-bold hover:border-1"
         type="submit"
         variant="outlined"
       >
