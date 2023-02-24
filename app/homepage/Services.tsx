@@ -55,19 +55,19 @@ const Services = () => {
                 <List>
                   {services.map((service, index) => {
                     return (
-                      index < 7 && (
+                      index < 6 && (
                         <ListItem key={index}>
                           <ListItemIcon>
                             <Image
                               src="/images/star-white.svg"
                               alt="star"
-                              width={70}
-                              height={70}
+                              width={50}
+                              height={50}
                             />
                           </ListItemIcon>
                           <ListItemText
                             primary={
-                              <Typography component="h4" variant="h4">
+                              <Typography component="h5" variant="h5">
                                 {service}
                               </Typography>
                             }
@@ -82,19 +82,19 @@ const Services = () => {
                 <List>
                   {services.map((service, index) => {
                     return (
-                      index > 7 && (
+                      index > 6 && (
                         <ListItem key={index}>
                           <ListItemIcon>
                             <Image
                               src="/images/star-white.svg"
                               alt="star"
-                              width={70}
-                              height={70}
+                              width={50}
+                              height={50}
                             />
                           </ListItemIcon>
                           <ListItemText
                             primary={
-                              <Typography component="h4" variant="h4">
+                              <Typography component="h5" variant="h5">
                                 {service}
                               </Typography>
                             }

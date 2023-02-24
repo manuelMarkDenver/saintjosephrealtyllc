@@ -4,10 +4,11 @@ import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import Grid2 from "@mui/material/Unstable_Grid2"; // Grid version 2
 import Bar from "../homepage/components/Bar";
-import PhotoSlider from "../homepage/components/PhotoSlider";
+import PhotoSlider from "./projects/components/PhotoSlider";
 import Offers from "./Offers";
 import Services from "./Services";
 import MissionVision from "./MissionVision";
+import Projects from "./projects";
 
 const Homepage = (props: any) => {
   return (
@@ -74,7 +75,7 @@ const Homepage = (props: any) => {
         {/* Projects */}
         <Box>
           <Container className="py-24">
-            <PhotoSlider props={props} />
+            <Projects props={props} />
           </Container>
         </Box>
 
