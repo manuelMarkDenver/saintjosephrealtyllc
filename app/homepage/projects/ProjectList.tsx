@@ -1,23 +1,45 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Container, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { useEffect, useState, Suspense, lazy } from "react";
+import axios from "axios";
+import { Box, Container, Typography } from "@mui/material";
 import Slider from "react-slick";
 import ProjectCard from "./components/ProjectCard";
 
+const Progress = lazy(() => import("@/app/components/Progress"));
+const ProjectDialog = lazy(() => import("./components/ProjectDialog"));
+
 const ProjectList = (props: any) => {
-  const [data, setData] = useState([]);
+  const [data, setData]: any = useState([]);
+  const [projectId, setProjectId] = useState(null || 0);
+
+  const onClickHandler = (projectId: number) => {
+    handleClickOpen();
+    setProjectId(projectId);
+  };
+
+  const [open, setOpen] = useState(false);
+  
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("/api/projects/getProjects");
-      const data = await res.json();
-      setData(data);
+      try {
+        const res = await axios.get("/api/projects/getProjects");
+        setData(res?.data);
+      } catch (error) {
+        console.log(error);
+      }
     }
     fetchData();
   }, []);
-
 
   const settings = {
     centerMode: true,
@@ -29,7 +51,7 @@ const ProjectList = (props: any) => {
     slidesToScroll: 1,
   };
 
-  if (!data.length)
+  if (!data)
     return (
       <Box>
         <Typography component="p" variant="h6">
@@ -38,27 +60,40 @@ const ProjectList = (props: any) => {
       </Box>
     );
 
-  if (!data)
-    return (
-      <Box>
-        <Typography component="p" variant="h6">
-          Loading...
-        </Typography>
-      </Box>
-    );
+  if (!data.length) return <Progress />;
 
   return (
-    <Box>
-      <Container className="py-24">
-        <Slider {...settings}>
-          {data &&
-            data.map((project, index) => (
-              <ProjectCard key={index} props={project} />
-            ))}
-        </Slider>
-      </Container>
-    </Box>
+    <>
+      <Box>
+        <Container className="py-24">
+          <Suspense fallback={<Progress />}>
+            <Slider {...settings}>
+              {data &&
+                data.map((project: any, index: number) => (
+                  <ProjectCard
+                    key={index}
+                    projectProps={project}
+                    projIndex={index}
+                    clickHandler={onClickHandler}
+                  />
+                ))}
+            </Slider>
+          </Suspense>
+        </Container>
+      </Box>
+      <ProjectDialog open={open} handleClose={handleClose} projId={projectId}  />
+    </>
   );
 };
 
 export default ProjectList;
+
+const Loading = () => {
+  return (
+    <Box>
+      <Typography component="p" variant="h6">
+        Loading...
+      </Typography>
+    </Box>
+  );
+};
