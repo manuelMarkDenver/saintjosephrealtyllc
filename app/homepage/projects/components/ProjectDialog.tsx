@@ -38,7 +38,7 @@ const ProjectDialog = ({ open, handleClose, projId }: Props) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await axios.get(`/api/projects/getProject`, {
+        const res = await axios.get("/api/projects/getProject", {
           params: {
             id: projId,
           },

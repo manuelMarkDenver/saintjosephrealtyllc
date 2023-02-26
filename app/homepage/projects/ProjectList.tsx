@@ -6,7 +6,7 @@ import { Box, Container, Typography } from "@mui/material";
 import Slider from "react-slick";
 import ProjectCard from "./components/ProjectCard";
 
-const Progress = lazy(() => import("@/app/components/Progress"));
+const Progress = lazy(() => import("../../components/Progress"));
 const ProjectDialog = lazy(() => import("./components/ProjectDialog"));
 
 const ProjectList = (props: any) => {
