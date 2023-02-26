@@ -1,14 +1,21 @@
+"use client";
+
 import {
-  Button,
   Dialog,
-  DialogActions,
+  DialogTitle,
   DialogContent,
   DialogContentText,
-  DialogTitle,
+  DialogActions,
+  Paper,
+  Button,
   Slide,
+  Modal,
 } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { TransitionProps } from "@mui/material/transitions";
+import axios from "axios";
+import PhotoSlider from "./PhotoSlider";
+import Typography from "@mui/material/Typography";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -26,30 +33,50 @@ type Props = {
 };
 
 const ProjectDialog = ({ open, handleClose, projId }: Props) => {
-  console.log(
-    "🚀 ~ file: ProjectDialog.tsx:15 ~ ProjectDialog ~ projectId:",
-    projId
-  );
+  const [data, setData]: any = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await axios.get(`/api/projects/getProject`, {
+          params: {
+            id: projId,
+          },
+        });
+        setData(res?.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchData();
+  }, [projId]);
+
+  if (!data) return <div>No data</div>;
+  if (data.length) return <div>Loading...</div>;
+
   return (
-    <Dialog
-      open={open}
-      TransitionComponent={Transition}
-      keepMounted
-      onClose={handleClose}
-      aria-describedby="alert-dialog-slide-description"
-    >
-      <DialogTitle>{"Use Google's location service?"}</DialogTitle>
-      <DialogContent>
-        <DialogContentText id="alert-dialog-slide-description">
-          Let Google help apps determine location. This means sending anonymous
-          location data to Google, even when no apps are running.
-        </DialogContentText>
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={handleClose}>Disagree</Button>
-        <Button onClick={handleClose}>Agree</Button>
-      </DialogActions>
-    </Dialog>
+    <>
+      {data && (
+        <Dialog
+          open={open}
+          TransitionComponent={Transition}
+          keepMounted
+          onClose={handleClose}
+          aria-describedby="alert-dialog-slide-description"
+        >
+          <DialogTitle> {data?.project?.project}</DialogTitle>
+          <DialogContent>
+            <PhotoSlider fetchedImages={data?.images} />
+            <DialogContentText id="alert-dialog-slide-description">
+              {data?.project?.description}
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Close</Button>
+          </DialogActions>
+        </Dialog>
+      )}
+    </>
   );
 };
 

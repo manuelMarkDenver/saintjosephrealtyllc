@@ -1,18 +1,33 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
+import { Container } from "@mui/material";
 
-const PhotoSlider = ({ props }: any) => {
-  const imagesArr = props.images.slice().filter((image: string) => {
+const PhotoSlider = ({ fetchedImages }: any) => {
+  const [images, setImages] = useState<any>([]);
+
+  const imagesArr = images?.filter((image: string) => {
     return !/\.(mp4)$/.test(image);
   });
 
+  useEffect(() => {
+    const fetchImages = async () => {
+      setImages(fetchedImages);
+    };
+
+    if (fetchedImages) {
+      fetchImages();
+    }
+  }, [imagesArr]);
+
+  let newArr: any = [];
+
   const imagesMutatedArray = (images: string[]) => {
-    let newArr: any = [];
-    for (let index = 0; index < images.length; index++) {
+    for (let index = 0; index < images?.length; index++) {
       newArr.push({
         original: `/images/projects/project-1/${images[index]}`,
         thumbnail: `/images/projects/project-1/${images[index]}`,
@@ -23,14 +38,13 @@ const PhotoSlider = ({ props }: any) => {
 
   const settings: any = {
     showPlayButton: false,
-    thumbnailPosition: "right",
-    additionalClass: "featured-slide, featured-thumb",
+    thumbnailPosition: "bottom",
   };
 
   return (
-    <>
+    <Container>
       <ImageGallery items={imagesMutatedArray(imagesArr)} {...settings} />
-    </>
+    </Container>
   );
 };
 
