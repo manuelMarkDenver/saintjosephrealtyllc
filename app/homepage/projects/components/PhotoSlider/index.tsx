@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
+import "./styles.module.css"
+
 import { Container } from "@mui/material";
 
 const PhotoSlider = ({ fetchedImages }: any) => {
@@ -38,12 +40,14 @@ const PhotoSlider = ({ fetchedImages }: any) => {
 
   const settings: any = {
     showPlayButton: false,
-    thumbnailPosition: "bottom",
+    thumbnailPosition: "right",
+    loading: true,
+    thumbnailLoading: true,
   };
 
   return (
     <Container>
-      <ImageGallery items={imagesMutatedArray(imagesArr)} {...settings} />
+      <ImageGallery items={imagesMutatedArray(imagesArr)} {...settings}/>
     </Container>
   );
 };

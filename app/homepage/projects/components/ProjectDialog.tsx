@@ -6,10 +6,9 @@ import {
   DialogContent,
   DialogContentText,
   DialogActions,
-  Paper,
+  Box,
   Button,
   Slide,
-  Modal,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { TransitionProps } from "@mui/material/transitions";
@@ -60,13 +59,15 @@ const ProjectDialog = ({ open, handleClose, projId }: Props) => {
         <Dialog
           open={open}
           TransitionComponent={Transition}
-          keepMounted
+          // keepMounted
           onClose={handleClose}
           aria-describedby="alert-dialog-slide-description"
         >
           <DialogTitle> {data?.project?.project}</DialogTitle>
           <DialogContent>
+            <Box className="mb-4">
             <PhotoSlider fetchedImages={data?.images} />
+            </Box>
             <DialogContentText id="alert-dialog-slide-description">
               {data?.project?.description}
             </DialogContentText>
