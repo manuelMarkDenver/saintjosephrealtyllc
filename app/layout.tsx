@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import StyledEngineWrapper from "./StyledEngineWrapper";
 import Navbar from "./components/Navbar";
 import "./globals.css";
+import "./fonts.css";
 
 import { Inter, Roboto_Mono } from '@next/font/google';
 
