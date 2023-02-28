@@ -17,30 +17,26 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Stack } from "@mui/material";
 
-const pages = ["About Us", "Services", "Projects", "Mission", "Vision", "Contact Us"];
+const pages = [
+  "About Us",
+  "Services",
+  "Projects",
+  "Mission & Vision",
+  "Contact Us",
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null
-  );
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -73,7 +69,7 @@ function Navbar() {
                 letterSpacing: ".1rem",
                 color: "inherit",
                 textDecoration: "none",
-                alignSelf: "flex-end"
+                alignSelf: "flex-end",
               }}
             >
               Saint Joseph Realty LLC
@@ -109,11 +105,23 @@ function Navbar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              {pages.map((page) =>
+                page === "Mission & Vision" ? (
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <a href={`#missionvision`}>
+                      <Typography textAlign="center">{page}</Typography>
+                    </a>
+                  </MenuItem>
+                ) : (
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <a href={`#${page.toLowerCase()}`}>
+                      <Typography textAlign="center">
+                        {page.toLowerCase()}
+                      </Typography>
+                    </a>
+                  </MenuItem>
+                )
+              )}
             </Menu>
           </Box>
 
@@ -134,16 +142,39 @@ function Navbar() {
             Saint Joseph Realty LLC
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, justifyContent: "flex-end" }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "black", display: "block", textTransform: "capitalize" }}
-              >
-                {page}
-              </Button>
-            ))}
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              justifyContent: "flex-end",
+            }}
+          >
+            {pages.map((page) =>
+              page === "Mission & Vision" ? (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <a href={`#missionvision`}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </a>
+                </MenuItem>
+              ) : (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <a href={`#${page.replace(" ", "").toLowerCase()}`}>
+                    <Button
+                      key={page}
+                      onClick={handleCloseNavMenu}
+                      sx={{
+                        my: 2,
+                        color: "black",
+                        display: "block",
+                        textTransform: "capitalize",
+                      }}
+                    >
+                      {page.toLowerCase()}
+                    </Button>
+                  </a>
+                </MenuItem>
+              )
+            )}
           </Box>
 
           {/* <Box sx={{ flexGrow: 0 }}>

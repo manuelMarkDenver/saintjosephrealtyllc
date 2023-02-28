@@ -32,11 +32,11 @@ const services = [
 
 const Contact = () => {
   return (
-    <Box className="bg-creamish text-black">
+    <Box className="bg-creamish text-black" id="contactus">
       <Container className=" py-24">
         <Grid2 container>
           <Grid2 xs={12} md={5} className="flex flex-col justify-between">
-            <Typography component="h2" variant="h2">
+            <Typography component="h2" variant="h2" className="font-rockness text-5xl md:text-7xl text-center md:text-left">
               Contact Us
             </Typography>
             <Box>

@@ -2,14 +2,13 @@
 
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import Image from "next/image";
-import Grid2 from "@mui/material/Unstable_Grid2"; // Grid version 2
 import Bar from "../homepage/components/Bar";
-import PhotoSlider from "./projects/components/PhotoSlider";
 import Offers from "./Offers";
 import Services from "./Services";
 import MissionVision from "./MissionVision";
 import Projects from "./projects";
 import Contact from "./contact";
+import Link from "next/link";
 
 const Homepage = (props: any) => {
   return (
@@ -23,22 +22,24 @@ const Homepage = (props: any) => {
           >
             <Box className="flex flex-col justify-between h-full">
               <Box>
-                <Typography variant="h4" component="h2" className="italic">
+                <Typography variant="h4" component="h2" className="font-inter">
                   Unique Property
                 </Typography>
                 <Typography
                   variant="h1"
                   component="h1"
-                  className="font-sans ml-4"
+                  className="font- font-rockness ml-4"
                 >
                   Solution You Can Rely On
                 </Typography>
-                <Button
-                  variant="outlined"
-                  className="mt-10 py-4 px-10 rounded-lg bg-darkish text-white border-white hover:bg-creamish hover:text-black hover:border-darkish hover:font-bold hover:border-1"
-                >
-                  Get A Quotation Today!
-                </Button>
+                <a href="#contactus">
+                  <Button
+                    variant="outlined"
+                    className="mt-10 py-4 px-10 rounded-lg bg-darkish text-white border-white hover:bg-creamish hover:text-black hover:border-darkish hover:font-bold hover:border-1"
+                  >
+                    Get A Quotation Today!
+                  </Button>
+                </a>
               </Box>
 
               <Box>

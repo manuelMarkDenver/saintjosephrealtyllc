@@ -12,9 +12,9 @@ import ProjectList from "./ProjectList";
 const Projects = ({ props }: any) => {
   return (
     <>
-      <Grid2 container className="flex justify-start items-center mb-6">
+      <Grid2 container className="flex justify-start items-center mb-6" id="projects">
         <Grid2 xs={12} md={5}>
-          <Typography component="h2" variant="h2" className="mb-4">
+          <Typography component="h2" variant="h2" className="mb-4 font-rockness text-5xl md:text-7xl text-center md:text-left">
             Latest Projects
           </Typography>
         </Grid2>

@@ -7,7 +7,7 @@ import { Parallax } from "react-parallax";
 
 const MissionVision = () => {
   return (
-    <Box className="h-screen">
+    <Box className="h-screen" id="missionvision">
       <Parallax
         blur={5}
         bgImage="/images/parallax-bg.jpg"
@@ -27,7 +27,7 @@ const MissionVision = () => {
                 <Typography
                   component="h2"
                   variant="h2"
-                  className="text-lg md:text-5xl mb-0 md:mb-4"
+                  className="font-rockness text-5xl md:text-7xl mb-0 md:mb-4"
                 >
                   Mission
                 </Typography>
@@ -48,7 +48,7 @@ const MissionVision = () => {
                 <Typography
                   component="h2"
                   variant="h2"
-                  className="text-lg md:text-5xl mb-0 md:mb-4"
+                  className="font-rockness text-5xl md:text-7xl mb-0 md:mb-4"
                 >
                   Vision
                 </Typography>

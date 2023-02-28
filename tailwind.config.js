@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'rockness' : ['Rockness', 'Roboto', 'sans-serif'],
+        'roboto_mono' : ['var(--font-roboto-mono)', 'sans-serif'],
+        'inter': ['var(--font-inter)', 'sans-serif'],
+      },
       colors: {
         "creamish": "#eaeaea",
         "darkish": "#2b2c32",

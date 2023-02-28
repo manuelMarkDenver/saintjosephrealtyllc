@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Box, Container, Stack, Typography } from "@mui/material";
 import Image from "next/image";
@@ -7,17 +7,21 @@ import Bar from "../homepage/components/Bar";
 
 const Offers = () => {
   return (
-    <Box bgcolor="#2b2c32" color="white">
+    <Box bgcolor="#2b2c32" color="white" id="offers">
       <Container className="flex flex-row justify-center w-full py-24">
         <Grid2 container spacing={2}>
-          <Grid2 xs={6} className="flex flex-col justify-between">
-            <Typography component="h2" variant="h2">
+          <Grid2 xs={12} md={6} className="flex flex-col justify-between">
+            <Typography
+              component="h2"
+              variant="h2"
+              className="font-rockness text-5xl md:text-7xl text-center md:text-left"
+            >
               What We Offer
             </Typography>
             <Bar props="bg-creamish" />
           </Grid2>
-          <Grid2 xs={6}>
-            <Stack direction="column" spacing={6}>
+          <Grid2 xs={12} md={6}>
+            <Stack direction={{ md: "column" }} spacing={6}>
               <Stack direction="row" spacing={1}>
                 <Image
                   src="/images/star-white.svg"
