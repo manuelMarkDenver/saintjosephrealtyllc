@@ -1,12 +1,19 @@
 
 
+import { Inter, Roboto_Mono } from '@next/font/google';
+import localFont from '@next/font/local';
 import Footer from "./components/Footer";
 import StyledEngineWrapper from "./StyledEngineWrapper";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 import "./fonts.css";
 
-import { Inter, Roboto_Mono } from '@next/font/google';
+const rockness = localFont({
+  src: "../public/fonts/rockness/Rockness.otf",
+  display: 'swap',
+  variable: '--font-rockness',
+});
+
 
 const inter = Inter({
   variable: '--font-inter',
@@ -26,7 +33,7 @@ interface Props {
 
 export default function RootLayout({ children }: Props) {  
   return (
-    <html lang="en" className={`${inter.variable} ${roboto_mono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${roboto_mono.variable} ${rockness.variable}`}>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head

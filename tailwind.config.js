@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'rockness' : ['Rockness', 'Roboto', 'sans-serif'],
+        'rockness' : ['var(--font-rockness)', 'Roboto', 'sans-serif'],
         'roboto_mono' : ['var(--font-roboto-mono)', 'sans-serif'],
         'inter': ['var(--font-inter)', 'sans-serif'],
       },
