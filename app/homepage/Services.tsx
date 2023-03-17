@@ -32,18 +32,18 @@ const services = [
 
 const Services = () => {
   return (
-    <Box className="bg-darkish text-white" id="services">
+    <Box className="bg-creamish text-gray-700" id="services">
       <Container className=" py-24">
         <Grid2 container>
           <Grid2 xs={12} md={5} className="flex flex-col justify-between">
-            <Typography component="h2" variant="h2" className="font-rockness text-5xl md:text-7xl text-center md:text-left">
+            <Typography component="h2" variant="h2" className="font-lato text-4xl md:text-5xl text-center md:text-left">
               Services
             </Typography>
             <Box>
-              <Bar props="bg-creamish" />
+              <Bar props="bg-darkish" />
               <Typography
                 variant="caption"
-                className="italic text-lg text-gray-400"
+                className="italic text-lg text-gray-600"
               >
                 A solution to big or small problems
               </Typography>
@@ -59,7 +59,7 @@ const Services = () => {
                         <ListItem key={index}>
                           <ListItemIcon>
                             <Image
-                              src="/images/star-white.svg"
+                              src="/images/star-black.svg"
                               alt="star"
                               width={50}
                               height={50}
@@ -86,7 +86,7 @@ const Services = () => {
                         <ListItem key={index}>
                           <ListItemIcon>
                             <Image
-                              src="/images/star-white.svg"
+                              src="/images/star-black.svg"
                               alt="star"
                               width={50}
                               height={50}

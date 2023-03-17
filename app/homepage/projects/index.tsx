@@ -14,14 +14,14 @@ const Projects = ({ props }: any) => {
     <>
       <Grid2
         container
-        className="flex justify-center items-center md:justify-start md:items-center mb-6"
+        className="flex justify-center items-center md:justify-start md:items-center mb-6 text-white"
         id="projects"
       >
         <Grid2 xs={12} md={5} className="flex justify-center">
           <Typography
             component="h2"
             variant="h2"
-            className="font-rockness text-6xl md:text-7xl md:text-left mb-4 md:mb-0"
+            className="font-lato text-4xl md:text-5xl md:text-left mb-4 md:mb-0"
           >
             Latest Projects
           </Typography>

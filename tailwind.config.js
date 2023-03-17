@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'rockness' : ['var(--font-rockness)', 'Roboto', 'sans-serif'],
-        'roboto_mono' : ['var(--font-roboto-mono)', 'sans-serif'],
+        'lato' : ['var(--font-lato)', 'sans-serif'],
         'inter': ['var(--font-inter)', 'sans-serif'],
       },
       colors: {

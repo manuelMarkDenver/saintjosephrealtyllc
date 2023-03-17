@@ -32,18 +32,18 @@ const services = [
 
 const Contact = () => {
   return (
-    <Box className="bg-creamish text-black" id="contactus">
+    <Box className="bg-darkish text-white" id="contactus">
       <Container className=" py-24">
         <Grid2 container>
           <Grid2 xs={12} md={5} className="flex flex-col justify-between">
-            <Typography component="h2" variant="h2" className="font-rockness text-5xl md:text-7xl text-center md:text-left">
+            <Typography component="h2" variant="h2"  className="font-lato text-4xl md:text-5xl text-center md:text-left">
               Contact Us
             </Typography>
             <Box>
-              <Bar props="bg-darkish" />
+              <Bar props="bg-creamish" />
               <Typography
                 variant="caption"
-                className="italic text-lg text-gray-700"
+                className="italic text-lg text-white"
               >
                 We are just an email away!
               </Typography>

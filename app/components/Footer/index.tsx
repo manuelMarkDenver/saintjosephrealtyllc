@@ -10,7 +10,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 
 const Footer = () => {
   return (
-    <Box sx={{ bgcolor: "#2b2c32" }} className="text-white py-24">
+    <Box  className="bg-creamish text-black py-24">
       <Container maxWidth="xl">
         <Stack
           direction="row"
@@ -47,11 +47,11 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FacebookIcon className="text-white" />
+                  <FacebookIcon className="text-black" />
                 </Link>
               </IconButton>
               {/* <IconButton>
-                <TwitterIcon className="text-white" />
+                <TwitterIcon className="text-black" />
               </IconButton> */}
               <IconButton>
                 <Link
@@ -59,7 +59,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <InstagramIcon className="text-white" />
+                  <InstagramIcon className="text-black" />
                 </Link>
               </IconButton>
             </Stack>

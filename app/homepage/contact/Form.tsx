@@ -16,29 +16,29 @@ function Form() {
       className="flex flex-col max-w- my-0 mx-auto"
       onSubmit={handleSubmit}
     >
-      <FormControl>
-        <FormLabel>Name</FormLabel>
+      <FormControl className="flex justify-center">
+        <FormLabel className="text-white">Name</FormLabel>
         <TextField
           required
-          className={`my-2 shadow-lg`}
+          className={`my-2 shadow-lg bg-white`}
           value={name}
           onChange={(event) => setName(event.target.value)}
-          variant="outlined"
+          variant="filled"
         />
       </FormControl>
-      <FormControl>
-        <FormLabel>Email</FormLabel>
+      <FormControl className="flex justify-center">
+        <FormLabel className="text-white">Email</FormLabel>
         <TextField
           required
-          className={`my-2 shadow-lg`}
+          className={`my-2 shadow-lg bg-white`}
           type="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-          variant="outlined"
+          variant="filled"
         />
       </FormControl>
       <Button
-        className="mt-10 py-4 px-10 rounded-lg bg-darkish text-white border-white hover:bg-creamish hover:text-black hover:border-darkish hover:font-bold hover:border-1"
+        className="mt-10 py-4 px-10 bg-darkish text-white border-white hover:bg-creamish hover:text-black hover:border-darkish hover:font-bold hover:border-1"
         type="submit"
         variant="outlined"
       >

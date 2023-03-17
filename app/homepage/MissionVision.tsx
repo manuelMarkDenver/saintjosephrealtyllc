@@ -27,7 +27,7 @@ const MissionVision = () => {
                 <Typography
                   component="h2"
                   variant="h2"
-                  className="font-rockness text-5xl md:text-7xl mb-0 md:mb-4"
+                  className="font-lato text-3xl md:text-5xl mb-0 md:mb-4"
                 >
                   Mission
                 </Typography>
@@ -48,7 +48,7 @@ const MissionVision = () => {
                 <Typography
                   component="h2"
                   variant="h2"
-                  className="font-rockness text-5xl md:text-7xl mb-0 md:mb-4"
+                  className="font-lato text-3xl md:text-5xl mb-0 md:mb-4"
                 >
                   Vision
                 </Typography>
