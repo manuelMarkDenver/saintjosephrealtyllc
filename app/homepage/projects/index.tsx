@@ -14,10 +14,10 @@ const Projects = ({ props }: any) => {
     <>
       <Grid2
         container
-        className="flex justify-center items-center md:justify-start md:items-center mb-6 text-white"
+        className="flex justify-start items-center md:justify-start md:items-center mb-6 text-white"
         id="projects"
       >
-        <Grid2 xs={12} md={5} className="flex justify-center">
+        <Grid2 xs={12} md={6} className="flex justify-start">
           <Typography
             component="h2"
             variant="h2"
@@ -26,27 +26,11 @@ const Projects = ({ props }: any) => {
             Latest Projects
           </Typography>
         </Grid2>
-        <Grid2 xs={12} md={2} className="flex justify-center items-center mb-4 md:mb-0">
-          <Image
-            src="/images/star-black.svg"
-            alt="star"
-            width={80}
-            height={80}
-            className="block md:hidden"
-          />
-          <Image
-            src="/images/star-black.svg"
-            alt="star"
-            width={100}
-            height={100}
-            className="hidden md:block"
-          />
-        </Grid2>
-        <Grid2 xs={12} md={5}>
+        <Grid2 xs={12} md={6}>
           <Typography
             component="p"
             variant="caption"
-            className="mb-4 text-sm text-center md:text-justify"
+            className="mb-4 text-sm text-center md:text-left"
           >
             We at Saint Joseph Realty LLC. is constantly striving for
             perfection. We are lucky to work with notable and known clients, who
