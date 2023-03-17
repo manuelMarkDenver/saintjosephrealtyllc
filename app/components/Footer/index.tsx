@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import { Box, Container, IconButton, Stack, Typography } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -41,13 +42,25 @@ const Footer = () => {
 
             <Stack direction="row">
               <IconButton>
-                <FacebookIcon className="text-white" />
+                <Link
+                  href="https://www.facebook.com/profile.php?id=100090794007749&mibextid=LQQJ4d"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FacebookIcon className="text-white" />
+                </Link>
               </IconButton>
-              <IconButton>
+              {/* <IconButton>
                 <TwitterIcon className="text-white" />
-              </IconButton>
+              </IconButton> */}
               <IconButton>
-                <InstagramIcon className="text-white" />
+                <Link
+                  href="https://www.instagram.com/saintjosephrealtyllc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <InstagramIcon className="text-white" />
+                </Link>
               </IconButton>
             </Stack>
           </Stack>

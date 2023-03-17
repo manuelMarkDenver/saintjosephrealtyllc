@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -11,22 +12,22 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Stack } from "@mui/material";
 
 const pages = [
-  "About Us",
+  "Home",
+  // "About Us",
   "Services",
   "Projects",
   "Mission & Vision",
+  "Capability Statement",
   "Contact Us",
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function Navbar() {
+function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -65,12 +66,12 @@ function Navbar() {
               href="/"
               sx={{
                 mr: 2,
-                display: { xs: "none", md: "flex" },
                 letterSpacing: ".1rem",
                 color: "inherit",
                 textDecoration: "none",
                 alignSelf: "flex-end",
               }}
+              className="hidden md:block text-xl"
             >
               Saint Joseph Realty LLC
             </Typography>
@@ -105,17 +106,43 @@ function Navbar() {
                 display: { xs: "block", md: "none" },
               }}
             >
+              {/* mobile */}
               {pages.map((page) =>
-                page === "Mission & Vision" ? (
+                page === "Home" ? (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <a href={`#missionvision`}>
-                      <Typography textAlign="center">{page}</Typography>
+                    <Link href={"/"}>
+                      <Typography
+                        textAlign="center"
+                        sx={{ textTransform: "capitalize" }}
+                      >
+                        {page}
+                      </Typography>
+                    </Link>
+                  </MenuItem>
+                ) : page === "Mission & Vision" ? (
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <a href={`/#missionvision`}>
+                      <Typography
+                        textAlign="center"
+                        sx={{ textTransform: "capitalize" }}
+                      >
+                        {page}
+                      </Typography>
                     </a>
+                  </MenuItem>
+                ) : page === "Capability Statement" ? (
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Link href="/capability">
+                      <Typography textAlign="center">{page}</Typography>
+                    </Link>
                   </MenuItem>
                 ) : (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <a href={`#${page.toLowerCase()}`}>
-                      <Typography textAlign="center">
+                    <a href={`/#${page.toLowerCase()}`}>
+                      <Typography
+                        textAlign="center"
+                        sx={{ textTransform: "capitalize" }}
+                      >
                         {page.toLowerCase()}
                       </Typography>
                     </a>
@@ -132,12 +159,12 @@ function Navbar() {
             href=""
             sx={{
               mr: 2,
-              display: { xs: "flex", md: "none" },
               flexGrow: 1,
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
             }}
+            className="block text-base md:text-2xl md:hidden"
           >
             Saint Joseph Realty LLC
           </Typography>
@@ -149,16 +176,29 @@ function Navbar() {
               justifyContent: "flex-end",
             }}
           >
+            {/* desktop */}
             {pages.map((page) =>
-              page === "Mission & Vision" ? (
+              page === "Home" ? (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <a href={`#missionvision`}>
+                  <Link href={`/`}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </Link>
+                </MenuItem>
+              ) : page === "Mission & Vision" ? (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <a href={`/#missionvision`}>
                     <Typography textAlign="center">{page}</Typography>
                   </a>
                 </MenuItem>
+              ) : page === "Capability Statement" ? (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Link href="/capability">
+                    <Typography textAlign="center">{page}</Typography>
+                  </Link>
+                </MenuItem>
               ) : (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <a href={`#${page.replace(" ", "").toLowerCase()}`}>
+                  <a href={`/#${page.replace(" ", "").toLowerCase()}`}>
                     <Button
                       key={page}
                       onClick={handleCloseNavMenu}
@@ -166,49 +206,23 @@ function Navbar() {
                         my: 2,
                         color: "black",
                         display: "block",
-                        textTransform: "capitalize",
                       }}
                     >
-                      {page.toLowerCase()}
+                      <Typography
+                        textAlign="center"
+                        sx={{ textTransform: "capitalize" }}
+                      >
+                        {page.toLowerCase()}
+                      </Typography>
                     </Button>
                   </a>
                 </MenuItem>
               )
             )}
           </Box>
-
-          {/* <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
   );
 }
-export default Navbar;
+export default Header;

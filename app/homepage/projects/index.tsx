@@ -12,25 +12,41 @@ import ProjectList from "./ProjectList";
 const Projects = ({ props }: any) => {
   return (
     <>
-      <Grid2 container className="flex justify-start items-center mb-6" id="projects">
-        <Grid2 xs={12} md={5}>
-          <Typography component="h2" variant="h2" className="mb-4 font-rockness text-5xl md:text-7xl text-center md:text-left">
+      <Grid2
+        container
+        className="flex justify-center items-center md:justify-start md:items-center mb-6"
+        id="projects"
+      >
+        <Grid2 xs={12} md={5} className="flex justify-center">
+          <Typography
+            component="h2"
+            variant="h2"
+            className="font-rockness text-6xl md:text-7xl md:text-left mb-4 md:mb-0"
+          >
             Latest Projects
           </Typography>
         </Grid2>
-        <Grid2 xs={12} md={2}>
+        <Grid2 xs={12} md={2} className="flex justify-center items-center mb-4 md:mb-0">
           <Image
             src="/images/star-black.svg"
             alt="star"
-            width={130}
-            height={130}
+            width={80}
+            height={80}
+            className="block md:hidden"
+          />
+          <Image
+            src="/images/star-black.svg"
+            alt="star"
+            width={100}
+            height={100}
+            className="hidden md:block"
           />
         </Grid2>
         <Grid2 xs={12} md={5}>
           <Typography
             component="p"
             variant="caption"
-            className="mb-4 text-justify"
+            className="mb-4 text-sm text-center md:text-justify"
           >
             We at Saint Joseph Realty LLC. is constantly striving for
             perfection. We are lucky to work with notable and known clients, who
