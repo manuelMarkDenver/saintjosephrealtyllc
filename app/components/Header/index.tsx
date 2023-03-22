@@ -75,7 +75,7 @@ function Header() {
                   textDecoration: "none",
                   alignSelf: "flex-end",
                 }}
-                className="hidden md:block text-xl"
+                className="font-lato hidden md:block text-xl"
               >
                 Saint Joseph Realty LLC
               </Typography>
@@ -168,7 +168,7 @@ function Header() {
                 color: "inherit",
                 textDecoration: "none",
               }}
-              className="block text-base md:text-2xl md:hidden"
+              className="font-lato block text-base md:text-2xl md:hidden"
             >
               Saint Joseph Realty LLC
             </Typography>

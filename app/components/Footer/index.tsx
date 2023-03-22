@@ -5,7 +5,6 @@ import Link from "next/link";
 
 import { Box, Container, IconButton, Stack, Typography } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 const Footer = () => {
@@ -50,9 +49,6 @@ const Footer = () => {
                   <FacebookIcon className="text-black" />
                 </Link>
               </IconButton>
-              {/* <IconButton>
-                <TwitterIcon className="text-black" />
-              </IconButton> */}
               <IconButton>
                 <Link
                   href="https://www.instagram.com/saintjosephrealtyllc/"

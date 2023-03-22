@@ -26,10 +26,8 @@ const Homepage = (props: any) => {
         <Offers />
 
         {/* Projects */}
-        <Box>
-          <Container className="py-24">
-            <Projects props={props} />
-          </Container>
+        <Box className="py-24">
+          <Projects props={props} />
         </Box>
 
         {/* Services */}

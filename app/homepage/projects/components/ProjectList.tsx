@@ -4,10 +4,10 @@ import { useEffect, useState, Suspense, lazy } from "react";
 import axios from "axios";
 import { Box, Container, Typography } from "@mui/material";
 import Slider from "react-slick";
-import ProjectCard from "./components/ProjectCard";
+import ProjectCard from "./ProjectCard";
 
-const Progress = lazy(() => import("../../components/Progress"));
-const ProjectDialog = lazy(() => import("./components/ProjectDialog"));
+const Progress = lazy(() => import("../../../components/Progress"));
+const ProjectDialog = lazy(() => import("./ProjectDialog"));
 
 const ProjectList = (props: any) => {
   const [data, setData]: any = useState([]);

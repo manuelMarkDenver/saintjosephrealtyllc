@@ -43,7 +43,7 @@ const Contact = () => {
               <Bar props="bg-creamish" />
               <Typography
                 variant="caption"
-                className="italic text-lg text-white"
+                className="italic text-lg text-gray-400"
               >
                 We are just an email away!
               </Typography>
