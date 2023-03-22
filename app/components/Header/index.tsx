@@ -4,6 +4,8 @@ import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import TopBar from './TopBar'
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -41,93 +43,155 @@ function Header() {
   };
 
   return (
-    <AppBar
-      position="static"
-      sx={{
-        bgcolor: "#eaeaea",
-        color: "black",
-      }}
-      className={"py-5"}
-    >
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Stack direction="row">
-            <Image
-              src={"/images/site-logo.png"}
-              alt="site-logo"
-              width={62}
-              height={62}
-              className="mr-3"
-            />
+    <>
+      <TopBar />
+      <AppBar
+        position="static"
+        sx={{
+          bgcolor: "#eaeaea",
+          color: "black",
+        }}
+        className={"py-5"}
+      >
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Stack direction="row">
+              <Image
+                src={"/images/site-logo.png"}
+                alt="site-logo"
+                width={62}
+                height={62}
+                className="mr-3"
+              />
+              <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href="/"
+                sx={{
+                  mr: 2,
+                  letterSpacing: ".1rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                  alignSelf: "flex-end",
+                }}
+                className="hidden md:block text-xl"
+              >
+                Saint Joseph Realty LLC
+              </Typography>
+            </Stack>
+
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{
+                  display: { xs: "block", md: "none" },
+                }}
+              >
+                {/* mobile */}
+                {pages.map((page) =>
+                  page === "Home" ? (
+                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                      <Link href={"/"}>
+                        <Typography
+                          textAlign="center"
+                          sx={{ textTransform: "capitalize" }}
+                        >
+                          {page}
+                        </Typography>
+                      </Link>
+                    </MenuItem>
+                  ) : page === "Mission & Vision" ? (
+                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                      <a href={`/#missionvision`}>
+                        <Typography
+                          textAlign="center"
+                          sx={{ textTransform: "capitalize" }}
+                        >
+                          {page}
+                        </Typography>
+                      </a>
+                    </MenuItem>
+                  ) : page === "Capability Statement" ? (
+                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                      <Link href="/capability">
+                        <Typography textAlign="center">{page}</Typography>
+                      </Link>
+                    </MenuItem>
+                  ) : (
+                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                      <a href={`/#${page.toLowerCase()}`}>
+                        <Typography
+                          textAlign="center"
+                          sx={{ textTransform: "capitalize" }}
+                        >
+                          {page.toLowerCase()}
+                        </Typography>
+                      </a>
+                    </MenuItem>
+                  )
+                )}
+              </Menu>
+            </Box>
+
             <Typography
-              variant="h6"
+              variant="h5"
               noWrap
               component="a"
-              href="/"
+              href=""
               sx={{
                 mr: 2,
-                letterSpacing: ".1rem",
+                flexGrow: 1,
+                letterSpacing: ".3rem",
                 color: "inherit",
                 textDecoration: "none",
-                alignSelf: "flex-end",
               }}
-              className="hidden md:block text-xl"
+              className="block text-base md:text-2xl md:hidden"
             >
               Saint Joseph Realty LLC
             </Typography>
-          </Stack>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+            <Box
               sx={{
-                display: { xs: "block", md: "none" },
+                flexGrow: 1,
+                display: { xs: "none", md: "flex" },
+                justifyContent: "flex-end",
               }}
             >
-              {/* mobile */}
+              {/* desktop */}
               {pages.map((page) =>
                 page === "Home" ? (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Link href={"/"}>
-                      <Typography
-                        textAlign="center"
-                        sx={{ textTransform: "capitalize" }}
-                      >
-                        {page}
-                      </Typography>
+                    <Link href={`/`}>
+                      <Typography textAlign="center">{page}</Typography>
                     </Link>
                   </MenuItem>
                 ) : page === "Mission & Vision" ? (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <a href={`/#missionvision`}>
-                      <Typography
-                        textAlign="center"
-                        sx={{ textTransform: "capitalize" }}
-                      >
-                        {page}
-                      </Typography>
+                      <Typography textAlign="center">{page}</Typography>
                     </a>
                   </MenuItem>
                 ) : page === "Capability Statement" ? (
@@ -138,91 +202,32 @@ function Header() {
                   </MenuItem>
                 ) : (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <a href={`/#${page.toLowerCase()}`}>
-                      <Typography
-                        textAlign="center"
-                        sx={{ textTransform: "capitalize" }}
+                    <a href={`/#${page.replace(" ", "").toLowerCase()}`}>
+                      <Button
+                        key={page}
+                        onClick={handleCloseNavMenu}
+                        sx={{
+                          my: 2,
+                          color: "black",
+                          display: "block",
+                        }}
                       >
-                        {page.toLowerCase()}
-                      </Typography>
+                        <Typography
+                          textAlign="center"
+                          sx={{ textTransform: "capitalize" }}
+                        >
+                          {page.toLowerCase()}
+                        </Typography>
+                      </Button>
                     </a>
                   </MenuItem>
                 )
               )}
-            </Menu>
-          </Box>
-
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              flexGrow: 1,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-            className="block text-base md:text-2xl md:hidden"
-          >
-            Saint Joseph Realty LLC
-          </Typography>
-
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", md: "flex" },
-              justifyContent: "flex-end",
-            }}
-          >
-            {/* desktop */}
-            {pages.map((page) =>
-              page === "Home" ? (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Link href={`/`}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </Link>
-                </MenuItem>
-              ) : page === "Mission & Vision" ? (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <a href={`/#missionvision`}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </a>
-                </MenuItem>
-              ) : page === "Capability Statement" ? (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Link href="/capability">
-                    <Typography textAlign="center">{page}</Typography>
-                  </Link>
-                </MenuItem>
-              ) : (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <a href={`/#${page.replace(" ", "").toLowerCase()}`}>
-                    <Button
-                      key={page}
-                      onClick={handleCloseNavMenu}
-                      sx={{
-                        my: 2,
-                        color: "black",
-                        display: "block",
-                      }}
-                    >
-                      <Typography
-                        textAlign="center"
-                        sx={{ textTransform: "capitalize" }}
-                      >
-                        {page.toLowerCase()}
-                      </Typography>
-                    </Button>
-                  </a>
-                </MenuItem>
-              )
-            )}
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
+    </>
   );
 }
 export default Header;

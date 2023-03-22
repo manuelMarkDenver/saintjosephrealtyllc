@@ -4,11 +4,11 @@ import Link from "next/link";
 
 const Banner = () => {
   return (
-    <Box className="flex flex-col justify-evenly z-20 md:w-3/5 md:h-screen relative">
+    <Box className="flex flex-col justify-evenly z-20 md:w-4/5 md:h-screen relative">
       <Typography
         variant="h2"
         component="h1"
-        className="font-lato text-center md:text-left mb-2  md:mb-0 text-gray-300"
+        className="font-lato font-bold text-center md:text-left mb-2 md:mb-0 text-white"
       >
         Property Management <br />
         That <span className="italic mx-3">Fit</span> Your Needs
@@ -16,9 +16,9 @@ const Banner = () => {
 
       <Box>
         <Typography
-          variant="body1"
-          component="h6"
-          className="font-lato text-center md:text-left mb-2 md:mb-0 leading-relaxed tracking-wide text-gray-300"
+          variant="h6"
+          component="h3"
+          className="font-lato text-center md:text-left mb-2 md:mb-0 leading-relaxed tracking-wide text-white"
         >
           Experience elevated living with Saint Joseph Realty LLC. Our expert
           team is dedicated to providing exceptional property management
@@ -31,9 +31,9 @@ const Banner = () => {
 
         <Button
           variant="outlined"
-          className="my-10 py-4 px-10 rounded-lg bg-white text-gray-800 border-darkish hover:bg-darkish hover:text-gray-200 hover:border-creamish font-bold hover:border-1"
+          className="my-10 py-4 px-10 rounded-lg bg-darkish text-white border-white hover:bg-creamish hover:text-gray-700 hover:border-creamish font-bold hover:border-1"
         >
-          <Link href="#contactus">Get A Quotation Today!</Link>
+          <a href="#contactus">Get Started</a>
         </Button>
       </Box>
     </Box>
