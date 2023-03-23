@@ -14,7 +14,7 @@ const youtubeOpts = {
   width: "700",
   playerVars: {
     // https://developers.google.com/youtube/player_parameters
-    autoplay: 1,
+    autoplay: 0,
     controls: 0,
     fs: 0,
     loop: 1,

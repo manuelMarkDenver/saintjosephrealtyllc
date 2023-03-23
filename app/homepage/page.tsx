@@ -26,7 +26,7 @@ const Homepage = (props: any) => {
         <Offers />
 
         {/* Projects */}
-        <Box className="py-24">
+        <Box className="py-24 bg-creamish">
           <Projects props={props} />
         </Box>
 
