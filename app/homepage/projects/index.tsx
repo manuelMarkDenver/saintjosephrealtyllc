@@ -393,7 +393,7 @@ const Projects = () => {
               <Grid2 xs={12} md={7}>
                 <Stack direction='column' gap={4}>
                   <Image
-                    src='/images/projects/before-after/refrigerators-1.png'
+                    src='/images/projects/before-after/refrigerator-1.png'
                     alt='Kitchen renovation'
                     width={700}
                     height={700}
