@@ -25,53 +25,53 @@ const Offers = () => {
     },
   };
 
-  const checker = () => {
-    if (
-      useMediaQuery('(min-width:1224px)', {
-        noSsr: true,
-      })
-    ) {
-      return { height: '500', width: '700' };
-    }
+  // const checker = () => {
+  //   if (
+  //     useMediaQuery('(min-width:1224px)', {
+  //       noSsr: true,
+  //     })
+  //   ) {
+  //     return { height: '500', width: '700' };
+  //   }
 
-    if (
-      useMediaQuery('(max-width: 1824px)', {
-        noSsr: true,
-      }) &&
-      useMediaQuery('(min-width: 1225px)', {
-        noSsr: true,
-      })
-    ) {
-      return { height: '500', width: '700' };
-    }
+  //   if (
+  //     useMediaQuery('(max-width: 1824px)', {
+  //       noSsr: true,
+  //     }) &&
+  //     useMediaQuery('(min-width: 1225px)', {
+  //       noSsr: true,
+  //     })
+  //   ) {
+  //     return { height: '500', width: '700' };
+  //   }
 
-    if (
-      useMediaQuery('(max-width: 1224px)', {
-        noSsr: true,
-      }) &&
-      useMediaQuery('(min-width: 427px)')
-    ) {
-      return { height: '450', width: '650' };
-    }
+  //   if (
+  //     useMediaQuery('(max-width: 1224px)', {
+  //       noSsr: true,
+  //     }) &&
+  //     useMediaQuery('(min-width: 427px)')
+  //   ) {
+  //     return { height: '450', width: '650' };
+  //   }
 
-    if (
-      useMediaQuery('(max-width: 426px)', {
-        noSsr: true,
-      }) && useMediaQuery('(min-width: 321px)', {
-        noSsr: true,
-      })
-    )
-      return { height: '200', width: '350' };
+  //   if (
+  //     useMediaQuery('(max-width: 426px)', {
+  //       noSsr: true,
+  //     }) && useMediaQuery('(min-width: 321px)', {
+  //       noSsr: true,
+  //     })
+  //   )
+  //     return { height: '200', width: '350' };
 
-      if (
-        useMediaQuery('(max-width: 320px)', {
-          noSsr: true,
-        })
-      )
-        return { height: '200', width: '300' };
-  };
+  //     if (
+  //       useMediaQuery('(max-width: 320px)', {
+  //         noSsr: true,
+  //       })
+  //     )
+  //       return { height: '200', width: '300' };
+  // };
 
-  const dynamicDimension = checker();
+  // const dynamicDimension = checker();
 
   return (
     <Box
@@ -88,10 +88,11 @@ const Offers = () => {
             >
               Why Work With Us
             </Typography>
-            <Box className='flex justify-center lg:justify-start'>
+            <Box className='flex justify-center lg:justify-start w-full'>
               <YouTube
                 videoId='y9j-BL5ocW8'
-                opts={{ ...opts, ...dynamicDimension }}
+                opts={{ ...opts }}
+                className="flex justify-center items-center w-full lg:justify-start"
               />
             </Box>
           </Grid2>
