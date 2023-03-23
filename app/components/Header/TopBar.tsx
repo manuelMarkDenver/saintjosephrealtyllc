@@ -6,14 +6,14 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 const TopBar = () => {
   return (
     <Container maxWidth="xl" className="text-white flex justify-end py-1">
-      <Stack direction="row" spacing={2} className="flex items-end">
-        <Typography variant="caption" className="text-gray-300">
+      <Stack direction="row" spacing={{ xs: 1, md: 2 }} className="flex items-end">
+        <Typography variant="caption" className="text-xs text-center text-gray-300">
           Toll Free (888)781-6227
         </Typography>
-        <Typography variant="caption" className="text-gray-300">
+        <Typography variant="caption" className="text-xs text-center text-gray-300">
           Efax (857)557-7188
         </Typography>
-        <Typography variant="caption" className="text-gray-300">
+        <Typography variant="caption" className="text-xs text-center text-gray-300">
           Local (857)557-6558
         </Typography>
         <IconButton className='p-0 m-0 flex justify-center items-center'>

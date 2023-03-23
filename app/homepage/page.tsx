@@ -1,44 +1,32 @@
-"use client";
+'use client';
 
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
-import Image from "next/image";
-import Bar from "./components/Bar";
-import Offers from "./Offers";
-import Services from "./Services";
-import MissionVision from "./MissionVision";
-import Projects from "./projects";
-import Contact from "./contact";
-import Banner from "./Banner";
+import Offers from './Offers';
+import Services from './Services';
+import MissionVision from './MissionVision';
+import Projects from './projects';
+import Contact from './contact';
+import Banner from './Banner';
 
 const Homepage = (props: any) => {
   return (
     <>
       {/* Banner */}
-      <Box>
-        <Box className="bg-[url('/images/banner/banner.jpg')] h-screen w-screen bg-cover relative">
-          <Box className="h-full w-full bg-gradient-to-r from-black to-transparent absolute inset-0 z-10" />
-          <Container>
-            <Banner />
-          </Container>
-        </Box>
+      <Banner />
 
-        {/* Offers */}
-        <Offers />
+      {/* Offers */}
+      <Offers />
 
-        {/* Projects */}
-        <Box className="py-24 bg-creamish">
-          <Projects props={props} />
-        </Box>
+      {/* Projects */}
+      <Projects />
 
-        {/* Services */}
-        <Services />
+      {/* Services */}
+      <Services />
 
-        {/* Mission Vision */}
-        <MissionVision />
+      {/* Mission Vision */}
+      <MissionVision />
 
-        {/* Contact */}
-        <Contact />
-      </Box>
+      {/* Contact */}
+      <Contact />
     </>
   );
 };

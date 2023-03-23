@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import TopBar from './TopBar'
-
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -75,7 +74,7 @@ function Header() {
                   textDecoration: "none",
                   alignSelf: "flex-end",
                 }}
-                className="font-lato hidden md:block text-xl"
+                className="font-lato hidden md:block md:text-xl"
               >
                 Saint Joseph Realty LLC
               </Typography>
@@ -168,7 +167,7 @@ function Header() {
                 color: "inherit",
                 textDecoration: "none",
               }}
-              className="font-lato block text-base md:text-2xl md:hidden"
+              className="font-lato block text-xs md:text-2xl md:hidden"
             >
               Saint Joseph Realty LLC
             </Typography>
