@@ -3,12 +3,7 @@
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Image from 'next/image';
-import {
-  Container,
-  Box,
-  Stack,
-  Typography,
-} from '@mui/material';
+import { Container, Box, Stack, Typography } from '@mui/material';
 import Grid2 from '@mui/material/Unstable_Grid2'; // Grid version 2
 import 'react-image-gallery/styles/css/image-gallery.css';
 
@@ -221,11 +216,10 @@ const Projects = () => {
                     className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
                   >
                     <span className='italic block'>Before renovation:</span>
-                    The bedroom in this property was outdated and uninviting.
-                    The walls were painted a dull beige color and there was old,
-                    worn-out carpet on the floor. The closet doors were missing
-                    and the lighting was dim, making the space feel cramped and
-                    dark.
+                    The front porch of this property is outdated, with worn-out
+                    and damaged flooring, chipped paint, and a general lack of
+                    curb appeal. It does not provide a welcoming entrance for
+                    tenants and may even deter potential renters or buyers.
                   </Typography>
                   <Typography
                     component='h6'
@@ -233,15 +227,13 @@ const Projects = () => {
                     className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
                   >
                     <span className='italic block'>After renovation:</span>
-                    The bedroom has undergone a complete transformation and is
-                    now a cozy retreat. The walls have been painted a fresh,
-                    neutral color and new hardwood flooring has been installed.
-                    The closet has been updated with new doors and ample storage
-                    space. The lighting has been upgraded, including the
-                    addition of a stylish light fixture, creating a bright and
-                    welcoming atmosphere. Overall, the bedroom is now an
-                    attractive and comfortable space that potential tenants will
-                    love.
+                    The front porch of this property has been transformed into a
+                    stunning and inviting entryway. The new flooring is durable
+                    and visually appealing, and the fresh coat of paint gives
+                    the porch a modern and welcoming vibe. The space is now
+                    perfect for tenants to enjoy their morning coffee or welcome
+                    guests to their home. The improved curb appeal will also
+                    attract potential renters or buyers.
                   </Typography>
                 </Box>
               </Grid2>
@@ -411,11 +403,7 @@ const Projects = () => {
                     className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
                   >
                     <span className='italic block'>Before renovation:</span>
-                    The bedroom in this property was outdated and uninviting.
-                    The walls were painted a dull beige color and there was old,
-                    worn-out carpet on the floor. The closet doors were missing
-                    and the lighting was dim, making the space feel cramped and
-                    dark.
+                    The refrigerator in this property is old, outdated, and not functioning optimally. It may not cool properly, have a lot of wear and tear, and it can be an eyesore in an otherwise well-maintained kitchen.
                   </Typography>
                   <Typography
                     component='h6'
@@ -423,15 +411,7 @@ const Projects = () => {
                     className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
                   >
                     <span className='italic block'>After renovation:</span>
-                    The bedroom has undergone a complete transformation and is
-                    now a cozy retreat. The walls have been painted a fresh,
-                    neutral color and new hardwood flooring has been installed.
-                    The closet has been updated with new doors and ample storage
-                    space. The lighting has been upgraded, including the
-                    addition of a stylish light fixture, creating a bright and
-                    welcoming atmosphere. Overall, the bedroom is now an
-                    attractive and comfortable space that potential tenants will
-                    love.
+                    The refrigerator in this property has been restored to its former glory, looking and functioning like new. The appliance is now energy-efficient, keeping food fresh and at a safe temperature. The restored exterior is visually appealing and blends seamlessly into the kitchen's overall aesthetic. The improved functionality and appearance will enhance the tenant's experience and increase the overall value of the property.
                   </Typography>
                 </Box>
               </Grid2>
