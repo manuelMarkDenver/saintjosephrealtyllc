@@ -16,7 +16,7 @@ const Banner = () => {
               That <span className='italic mx-3'>Fit</span> Your Needs
             </Typography>
 
-            <Box>
+            <Box className="flex flex-col lg:block">
               <Typography
                 variant='h6'
                 component='h3'
