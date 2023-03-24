@@ -29,11 +29,17 @@ export default async function handler(
         },
       });
 
+      const customMessage = `<pre>
+          <p>name : ${name}</p><br/>
+          <p>email: ${email}</p><br/>
+          ${message}
+      <pre>`
+
       const mailOptions = {
         from: `"${name}" <${email}>`,
         to: 'admin@saintjosephrealtyllc.com',
         subject: 'New message from your saintjosephrealtyllc.com website',
-        text: message,
+        text: customMessage,
       };
 
       // verify connection configuration
