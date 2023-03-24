@@ -5,6 +5,8 @@ import { TextField, Button, Box, Grid } from '@mui/material';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup';
+import { LoadingButton } from '@mui/lab';
+import CustomSnackbar from '../../components/CustomSnackbar';
 
 const Form = () => {
   const initialFormData = {
@@ -14,6 +16,16 @@ const Form = () => {
   };
 
   const [formData, setFormData] = useState(initialFormData);
+  const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState('false');
+
+  const handleClose = (event: any, reason: any) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   const emailSchema = Yup.object({
     name: Yup.string().required('Name is required'),
@@ -23,10 +35,11 @@ const Form = () => {
 
   const handleFormSubmit = async (data: any) => {
     try {
-      const response = await axios.post('/api/sendMail', data)
-      console.log("🚀 ~ file: Form.tsx:29 ~ handleFormSubmit ~ response:", response)
+      const response = await axios.post('/api/sendMail', data);
+      setOpen(true);
+      setSubmitting(false);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   };
 
@@ -36,18 +49,23 @@ const Form = () => {
     values,
     setFieldValue,
     handleChange,
-    handleBlur,
-    handleSubmit,
-    validateForm,
-    isValid,
     isSubmitting,
+    setSubmitting,
+    handleSubmit,
+    handleBlur,
+    validateForm,
+    setFieldTouched,
+    isValid,
     dirty,
+    resetForm,
   } = useFormik({
     enableReinitialize: true,
     initialValues: formData,
     validationSchema: emailSchema,
     onSubmit: (values) => {
       handleFormSubmit(values);
+      resetForm();
+      setMessage('Email successfully sent!');
     },
     validateOnMount: true,
     validateOnChange: false,
@@ -62,7 +80,7 @@ const Form = () => {
         autoComplete='false'
       >
         <Grid container>
-          <Grid item xs={12} className="mb-4">
+          <Grid item xs={12} className='mb-4'>
             <TextField
               id='name'
               name='name'
@@ -79,7 +97,7 @@ const Form = () => {
             />
           </Grid>
 
-          <Grid item xs={12} className="mb-4">
+          <Grid item xs={12} className='mb-4'>
             <TextField
               id='email'
               name='email'
@@ -94,11 +112,11 @@ const Form = () => {
               placeholder='e.g., janedoe@gmail.com'
               error={touched?.email && Boolean(errors?.email)}
               helperText={touched?.email && errors?.email}
-              autoComplete="false"
+              autoComplete='false'
             />
           </Grid>
 
-          <Grid item xs={12} className="mb-4">
+          <Grid item xs={12} className='mb-4'>
             <TextField
               id='message'
               name='message'
@@ -117,17 +135,20 @@ const Form = () => {
             />
           </Grid>
 
-          <Button
-            className='shadow-lg bg-creamish text-gray-700 border-white hover:bg-darkish hover:text-gray-300 hover:border-darkish hover:font-bold hover:border-1'
+          <LoadingButton
             type='submit'
+            loading={isSubmitting}
+            className='shadow-lg bg-creamish text-gray-700 border-white hover:bg-darkish hover:text-gray-300 hover:border-darkish hover:font-bold hover:border-1'
             variant='outlined'
             disabled={!(isValid && dirty)}
             fullWidth
+            loadingPosition='start'
           >
             Submit
-          </Button>
+          </LoadingButton>
         </Grid>
       </Box>
+      <CustomSnackbar message={message} open={open} handleClose={handleClose} />
     </>
   );
 };

@@ -14,8 +14,6 @@ export default async function handler(
   try {
     if (req.method === 'POST') {
       const { name, email, message } = req.body;
-      console.log("🚀 ~ file: sendMail.ts:17 ~ req.body:", req.body)
-
       const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
