@@ -5,6 +5,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 type Data = {
   message: string;
+  error?: any
 };
 
 export default async function handler(
@@ -31,16 +32,16 @@ export default async function handler(
       const mailOptions = {
         from: `"${name}" <${email}>`,
         to: 'admin@saintjosephrealtyllc.com',
-        subject: 'New message from your website saintjosephrealtyllc.com',
+        subject: 'New message from your saintjosephrealtyllc.com website',
         text: message,
       };
 
       // verify connection configuration
       transporter.verify(function (error: any, success: any) {
         if (error) {
-          console.log(error);
+          console.error("NodeMail Error", error);
         } else {
-          console.log('Server is ready to take our messages', success);
+          console.error('Server is ready to take our messages', success);
         }
       });
 
@@ -48,7 +49,7 @@ export default async function handler(
       res.status(200).json({ message: 'Email sent successfully' });
     }
   } catch (error) {
-    console.log({ error });
-    res.status(500).json({ message: 'Failed to send email' });
+    console.error({ error });
+    res.status(500).json({ message: 'Failed to send email', error: error });
   }
 }
