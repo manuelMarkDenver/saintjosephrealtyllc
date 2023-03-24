@@ -141,7 +141,8 @@ function Header() {
                     </MenuItem>
                   ) : (
                     <MenuItem key={page} onClick={handleCloseNavMenu}>
-                      <a href={`/#${page.toLowerCase()}`}>
+                      <a href={`/#${page.replace(" ", "").toLowerCase()}`}>
+                      {/* <a href={`/#${page.toLowerCase()}`}> */}
                         <Typography
                           textAlign="center"
                           sx={{ textTransform: "capitalize" }}
@@ -202,6 +203,7 @@ function Header() {
                 ) : (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <a href={`/#${page.replace(" ", "").toLowerCase()}`}>
+                    {/* <a href={`/#${page.replace(" ", "").toLowerCase()}`}> */}
                       <Button
                         key={page}
                         onClick={handleCloseNavMenu}
