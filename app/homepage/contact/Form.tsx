@@ -36,8 +36,11 @@ const Form = () => {
   const handleFormSubmit = async (data: any) => {
     try {
       const response = await axios.post('/api/sendMail', data);
-      setOpen(true);
-      setSubmitting(false);
+      if (response.status === 200) {
+        setOpen(true);
+        setSubmitting(false);
+        resetForm();
+      }
     } catch (error) {
       console.error(error);
     }
@@ -64,7 +67,6 @@ const Form = () => {
     validationSchema: emailSchema,
     onSubmit: (values) => {
       handleFormSubmit(values);
-      resetForm();
       setMessage('Email successfully sent!');
     },
     validateOnMount: true,
