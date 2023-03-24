@@ -29,7 +29,7 @@ export default async function handler(
         },
       });
 
-      const customMessage = `<p>name : ${name}</p><br/><p>email: ${email}</p><br/><br/>${message}`
+      const customMessage = `<p><strong>name:</strong> ${name}</p><p><strong>email:</strong> ${email}</p><br/>Message: ${message}`
 
       const mailOptions = {
         from: `"${name}" <${email}>`,
