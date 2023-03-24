@@ -39,7 +39,7 @@ export default async function handler(
         from: `"${name}" <${email}>`,
         to: 'admin@saintjosephrealtyllc.com',
         subject: 'New message from your saintjosephrealtyllc.com website',
-        text: customMessage,
+        html: customMessage,
       };
 
       // verify connection configuration
