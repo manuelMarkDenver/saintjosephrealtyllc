@@ -168,7 +168,7 @@ function Header() {
                 color: "inherit",
                 textDecoration: "none",
               }}
-              className="font-lato block text-xs md:text-2xl md:hidden"
+              className="font-lato block text-xs text-center md:text-2xl md:hidden whitespace-normal overflow-clip"
             >
               Saint Joseph Realty LLC
             </Typography>
