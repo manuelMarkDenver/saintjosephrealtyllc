@@ -2,6 +2,7 @@
 
 import { lazy, Suspense } from 'react';
 import { Grid, Box, Container, Typography } from '@mui/material';
+import Bar from '../components/Bar';
 
 const Form = lazy(() => import('./Form'));
 
@@ -36,7 +37,7 @@ const Contact = () => {
                 Contact Us
               </Typography>
               <Box>
-                {/* <Bar props='bg-darkish' /> */}
+                <Bar props='bg-darkish' />
                 <Typography
                   variant='caption'
                   className='italic text-lg text-gray-700'
