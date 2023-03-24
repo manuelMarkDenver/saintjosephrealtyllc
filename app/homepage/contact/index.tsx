@@ -1,13 +1,9 @@
 'use client';
 
-import {
-  Box,
-  Container,
-  Typography,
-} from '@mui/material';
-import Grid2 from '@mui/material/Unstable_Grid2'; // Grid version 2
-import Bar from '../components/Bar';
-import Form from './Form';
+import { lazy, Suspense } from 'react';
+import { Grid, Box, Container, Typography } from '@mui/material';
+
+const Form = lazy(() => import('./Form'));
 
 const services = [
   'Leasing',
@@ -30,8 +26,8 @@ const Contact = () => {
     <>
       <Box className='py-24 bg-creamish text-gray-700' id='contactus'>
         <Container>
-          <Grid2 container>
-            <Grid2 xs={12} md={5} className='flex flex-col justify-between'>
+          <Grid container>
+            <Grid item xs={12} md={5} className='flex flex-col justify-between'>
               <Typography
                 component='h2'
                 variant='h2'
@@ -40,7 +36,7 @@ const Contact = () => {
                 Contact Us
               </Typography>
               <Box>
-                <Bar props='bg-darkish' />
+                {/* <Bar props='bg-darkish' /> */}
                 <Typography
                   variant='caption'
                   className='italic text-lg text-gray-700'
@@ -48,11 +44,13 @@ const Contact = () => {
                   We are just an email away!
                 </Typography>
               </Box>
-            </Grid2>
-            <Grid2 xs={12} md={7}>
-              <Form />
-            </Grid2>
-          </Grid2>
+            </Grid>
+            <Grid item xs={12} md={7}>
+              <Suspense fallback={<div>Loading...</div>}>
+                <Form />
+              </Suspense>
+            </Grid>
+          </Grid>
         </Container>
       </Box>
     </>

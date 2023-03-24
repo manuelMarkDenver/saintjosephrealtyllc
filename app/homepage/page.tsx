@@ -1,32 +1,36 @@
 'use client';
+import { lazy, Suspense } from 'react';
 
-import Offers from './Offers';
-import Services from './Services';
-import MissionVision from './MissionVision';
-import Projects from './projects';
-import Contact from './contact';
-import Banner from './Banner';
+const Banner = lazy(() => import('./Banner'));
+const Offers = lazy(() => import('./Offers'));
+const Projects = lazy(() => import('./projects'));
+const Services = lazy(() => import('./Services'));
+const MissionVision = lazy(() => import('./MissionVision'));
+const Contact = lazy(() => import('./contact'));
 
-const Homepage = (props: any) => {
+const Homepage = () => {
   return (
     <>
-      {/* Banner */}
-      <Banner />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Banner />
+      </Suspense>
 
-      {/* Offers */}
       <Offers />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Projects />
+      </Suspense>
 
-      {/* Projects */}
-      <Projects />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Services />
+      </Suspense>
 
-      {/* Services */}
-      <Services />
+      <Suspense fallback={<div>Loading...</div>}>
+        <MissionVision />
+      </Suspense>
 
-      {/* Mission Vision */}
-      <MissionVision />
-
-      {/* Contact */}
-      <Contact />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Contact />
+      </Suspense>
     </>
   );
 };

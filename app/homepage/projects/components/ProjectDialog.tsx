@@ -14,7 +14,6 @@ import React, { useEffect, useState } from "react";
 import { TransitionProps } from "@mui/material/transitions";
 import axios from "axios";
 import PhotoSlider from "./PhotoSlider";
-import Typography from "@mui/material/Typography";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {

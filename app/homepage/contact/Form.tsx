@@ -1,74 +1,135 @@
+'use client';
+
 import React, { useState } from 'react';
-import { FormControl, InputLabel, Input, Button, Box } from '@mui/material';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel/FormControlLabel';
+import { TextField, Button, Box, Grid } from '@mui/material';
+import { useFormik } from 'formik';
+import axios from 'axios';
+import * as Yup from 'yup';
 
-function Form() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-    console.log('Name:', name);
-    console.log('Email:', email);
+const Form = () => {
+  const initialFormData = {
+    name: '',
+    email: '',
+    message: '',
   };
 
+  const [formData, setFormData] = useState(initialFormData);
+
+  const emailSchema = Yup.object({
+    name: Yup.string().required('Name is required'),
+    email: Yup.string().email().required('Email is required'),
+    message: Yup.string().required('Message is required'),
+  });
+
+  const handleFormSubmit = async (data: any) => {
+    try {
+      const response = await axios.post('/api/sendMail', data)
+      console.log("🚀 ~ file: Form.tsx:29 ~ handleFormSubmit ~ response:", response)
+    } catch (error) {
+      console.error(error)
+    }
+  };
+
+  const {
+    errors,
+    touched,
+    values,
+    setFieldValue,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    validateForm,
+    isValid,
+    isSubmitting,
+    dirty,
+  } = useFormik({
+    enableReinitialize: true,
+    initialValues: formData,
+    validationSchema: emailSchema,
+    onSubmit: (values) => {
+      handleFormSubmit(values);
+    },
+    validateOnMount: true,
+    validateOnChange: false,
+  });
+
   return (
-    <Box
-      component='form'
-      className='flex flex-col max-w- my-0 mx-auto'
-      onSubmit={handleSubmit}
-      noValidate
-    >
-      <FormControl variant='standard' className='mb-4'>
-        <TextField
-          label='Name'
-          variant='filled'
-          required
-          className={`shadow-lg bg-white`}
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-          placeholder='e.g., Jane Doe'
-        />
-      </FormControl>
-
-      <FormControl variant='standard' className='mb-4'>
-        <TextField
-          label='Email'
-          variant='filled'
-          required
-          className={`shadow-lg bg-white`}
-          type='email'
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          placeholder='e.g., janedoe@gmail.com'
-        />
-      </FormControl>
-
-      <FormControl variant='standard' className='mb-4'>
-        <TextField
-          label='Message'
-          variant='filled'
-          multiline
-          required
-          className={`shadow-lg bg-white`}
-          value={message}
-          onChange={(event) => setMessage(event.target.value)}
-          placeholder='Type your message here'
-          minRows={10}
-        />
-      </FormControl>
-
-      <Button
-        className='mt-10 py-4 px-10 bg-darkish text-white border-white hover:bg-creamish hover:text-black hover:border-darkish hover:font-bold hover:border-1'
-        type='submit'
-        variant='outlined'
+    <>
+      <Box
+        component='form'
+        onSubmit={handleSubmit}
+        aria-label='team-add-form'
+        autoComplete='false'
       >
-        Submit
-      </Button>
-    </Box>
+        <Grid container>
+          <Grid item xs={12} className="mb-4">
+            <TextField
+              id='name'
+              name='name'
+              label='Name'
+              fullWidth
+              required
+              className={`shadow-lg bg-white`}
+              value={values?.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              placeholder='e.g., Jane Doe'
+              error={touched?.name && Boolean(errors?.name)}
+              helperText={touched?.name && errors?.name}
+            />
+          </Grid>
+
+          <Grid item xs={12} className="mb-4">
+            <TextField
+              id='email'
+              name='email'
+              label='Email'
+              fullWidth
+              required
+              className={`shadow-lg bg-white`}
+              type='email'
+              value={values?.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              placeholder='e.g., janedoe@gmail.com'
+              error={touched?.email && Boolean(errors?.email)}
+              helperText={touched?.email && errors?.email}
+              autoComplete="false"
+            />
+          </Grid>
+
+          <Grid item xs={12} className="mb-4">
+            <TextField
+              id='message'
+              name='message'
+              label='Message'
+              fullWidth
+              multiline
+              required
+              className={`shadow-lg bg-white`}
+              value={values?.message}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              placeholder='Type your message here'
+              rows={4}
+              error={touched?.message && Boolean(errors?.message)}
+              helperText={touched?.message && errors?.message}
+            />
+          </Grid>
+
+          <Button
+            className='shadow-lg bg-creamish text-gray-700 border-white hover:bg-darkish hover:text-gray-300 hover:border-darkish hover:font-bold hover:border-1'
+            type='submit'
+            variant='outlined'
+            disabled={!(isValid && dirty)}
+            fullWidth
+          >
+            Submit
+          </Button>
+        </Grid>
+      </Box>
+    </>
   );
-}
+};
 
 export default Form;
