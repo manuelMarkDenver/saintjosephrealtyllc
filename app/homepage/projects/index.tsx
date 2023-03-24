@@ -3,7 +3,7 @@
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Image from 'next/image';
-import { Container, Box, Stack, Typography } from '@mui/material';
+import { Container, Box, Stack, Typography, Divider } from '@mui/material';
 import Grid2 from '@mui/material/Unstable_Grid2'; // Grid version 2
 import 'react-image-gallery/styles/css/image-gallery.css';
 
@@ -27,7 +27,6 @@ const Projects = () => {
                 </Typography>
                 <Typography
                   component='p'
-                  variant='h6'
                   className='mb-4 text-base lg:text-lg text-center lg:text-left lg:w-3/5'
                 >
                   We at Saint Joseph Realty LLC. is constantly striving for
@@ -46,7 +45,7 @@ const Projects = () => {
               variant='h6'
               className='font-Lato font-bold text-2xl md:text-4xl text-center mb-4 md:mb-10 text-gray-700'
             >
-              Bathroom Renovations
+              Bathroom Renovation & Cleaning
             </Typography>
 
             <Grid2
@@ -77,40 +76,33 @@ const Projects = () => {
                 >
                   <Typography
                     component='h6'
-                    variant='h6'
                     className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
                   >
-                    <span className='italic block'>Before renovation:</span>
-                    The bathroom was outdated and had an inefficient layout. The
-                    walls were painted in a dull color and the floor tiles were
-                    old and cracked. The vanity was old-fashioned and lacked
-                    storage space. The lighting was inadequate, and the shower
-                    area was cramped and uninviting. The overall feel of the
-                    bathroom was dreary and uninviting.
+                    <span className='italic block'>Before renovation:</span>A
+                    tired bedroom with old and worn out elements, such as
+                    outdated flooring, paint, and fixtures.
                   </Typography>
                   <Typography
                     component='h6'
-                    variant='h6'
                     className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
                   >
-                    <span className='italic block'>After renovation:</span>
-                    The bathroom has been transformed into a modern and
-                    functional space. The walls have been painted in a fresh,
-                    light color, and the floor tiles have been replaced with
-                    sleek and stylish tiles. The old-fashioned vanity has been
-                    replaced with a modern floating vanity that provides ample
-                    storage space. <br />
-                    <br />
-                    The lighting has been updated with energy-efficient LED
-                    lights, which provide ample illumination. The shower area
-                    has been enlarged, and a glass enclosure has been added to
-                    create a spacious and inviting shower. The addition of a new
-                    mirror and accessories has brought the entire space
-                    together, creating a cohesive and stylish look.
-                    <br />
-                    <br />
-                    The bathroom now feels bright, fresh, and inviting, and is a
-                    pleasure to use.
+                    <span className='italic block'>After renovation:</span>A
+                    renovated and upgraded bedroom with updated aesthetics and
+                    modern amenities, such as new flooring, fresh paint,
+                    contemporary fixtures, and improved functionality to enhance
+                    the living experience of tenants.
+                  </Typography>
+
+                  <Typography
+                    component='h6'
+                    className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
+                  >
+                    <span className='italic block'>
+                      Before & After cleaning: <br />
+                      (Bottom 2 images with blue tiles):
+                    </span>
+                    Thorough cleaning of bathroom surfaces, fixtures, and
+                    supplies for hygiene maintenance.
                   </Typography>
                 </Box>
               </Grid2>
@@ -124,7 +116,7 @@ const Projects = () => {
               variant='h6'
               className='font-Lato font-bold text-2xl md:text-4xl text-center mb-4 md:mb-10 text-gray-700'
             >
-              Bedroom Renovations
+              Bedroom Cleaning
             </Typography>
 
             <Grid2
@@ -144,36 +136,23 @@ const Projects = () => {
               </Grid2>
               <Grid2 xs={12} md={5} className='pt-0 lg:pt-10'>
                 <Box
-                  className='flex flex-col justify-evenly items-center'
+                  className='flex flex-col justify-evenly'
                   gap={{ xs: 2, md: 0 }}
                 >
                   <Typography
                     component='h6'
-                    variant='h6'
-                    className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
+                    className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
                   >
-                    <span className='italic block'>Before renovation:</span>
-                    The bedroom in this property was outdated and uninviting.
-                    The walls were painted a dull beige color and there was old,
-                    worn-out carpet on the floor. The closet doors were missing
-                    and the lighting was dim, making the space feel cramped and
-                    dark.
+                    <span className='italic block'>Before:</span>
+                    Unmade bed, dirty surfaces, cluttered floors.
                   </Typography>
                   <Typography
                     component='h6'
-                    variant='h6'
                     className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
                   >
-                    <span className='italic block'>After renovation:</span>
-                    The bedroom has undergone a complete transformation and is
-                    now a cozy retreat. The walls have been painted a fresh,
-                    neutral color and new hardwood flooring has been installed.
-                    The closet has been updated with new doors and ample storage
-                    space. The lighting has been upgraded, including the
-                    addition of a stylish light fixture, creating a bright and
-                    welcoming atmosphere. Overall, the bedroom is now an
-                    attractive and comfortable space that potential tenants will
-                    love.
+                    <span className='italic block'>After:</span>
+                    Cleaned and organized bedroom with a tidy bed, spotless
+                    surfaces, and decluttered floors.
                   </Typography>
                 </Box>
               </Grid2>
@@ -184,7 +163,6 @@ const Projects = () => {
           <Box className='mb-4 md:mb-20'>
             <Typography
               component='h2'
-              variant='h6'
               className='font-Lato font-bold text-2xl md:text-4xl text-center mb-4 md:mb-10 text-gray-700'
             >
               Front Porch Renovations
@@ -212,7 +190,6 @@ const Projects = () => {
                 >
                   <Typography
                     component='h6'
-                    variant='h6'
                     className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
                   >
                     <span className='italic block'>Before renovation:</span>
@@ -223,7 +200,6 @@ const Projects = () => {
                   </Typography>
                   <Typography
                     component='h6'
-                    variant='h6'
                     className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
                   >
                     <span className='italic block'>After renovation:</span>
@@ -244,7 +220,6 @@ const Projects = () => {
           <Box className='mb-4 md:mb-20'>
             <Typography
               component='h2'
-              variant='h6'
               className='font-Lato font-bold text-2xl md:text-4xl text-center mb-4 md:mb-10 text-gray-700'
             >
               Back Porch Renovations
@@ -278,7 +253,6 @@ const Projects = () => {
                 >
                   <Typography
                     component='h6'
-                    variant='h6'
                     className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
                   >
                     <span className='italic block'>Before renovation:</span>
@@ -290,7 +264,6 @@ const Projects = () => {
                   </Typography>
                   <Typography
                     component='h6'
-                    variant='h6'
                     className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
                   >
                     <span className='italic block'>After renovation:</span>
@@ -310,7 +283,6 @@ const Projects = () => {
           <Box className='mb-4 md:mb-20'>
             <Typography
               component='h2'
-              variant='h6'
               className='font-Lato font-bold text-2xl md:text-4xl text-center mb-4 md:mb-10 text-gray-700'
             >
               Kitchen Renovations
@@ -338,7 +310,6 @@ const Projects = () => {
                 >
                   <Typography
                     component='h6'
-                    variant='h6'
                     className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
                   >
                     <span className='italic block'>Before renovation:</span>
@@ -349,7 +320,6 @@ const Projects = () => {
                   </Typography>
                   <Typography
                     component='h6'
-                    variant='h6'
                     className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
                   >
                     <span className='italic block'>After renovation:</span>
@@ -368,10 +338,9 @@ const Projects = () => {
           </Box>
 
           {/*  Refrigerators */}
-          <Box className='mb-4 md:mb-20'>
+          {/* <Box className='mb-4 md:mb-20'>
             <Typography
               component='h2'
-              variant='h6'
               className='font-Lato font-bold text-2xl md:text-4xl text-center mb-4 md:mb-10 text-gray-700'
             >
               Refrigerators Restoration
@@ -399,7 +368,6 @@ const Projects = () => {
                 >
                   <Typography
                     component='h6'
-                    variant='h6'
                     className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
                   >
                     <span className='italic block'>Before renovation:</span>
@@ -407,7 +375,6 @@ const Projects = () => {
                   </Typography>
                   <Typography
                     component='h6'
-                    variant='h6'
                     className='font-lato mb-0 md:mb-4 text-base md:text-lg text-left md:text-left text-gray-600 tracking-normal md:tracking-wide leading-normal md:leading-relaxed'
                   >
                     <span className='italic block'>After renovation:</span>
@@ -416,7 +383,7 @@ const Projects = () => {
                 </Box>
               </Grid2>
             </Grid2>
-          </Box>
+          </Box> */}
         </Container>
       </Box>
     </>

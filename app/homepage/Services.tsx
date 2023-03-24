@@ -41,12 +41,6 @@ const Services = () => {
             </Typography>
             <Box>
               <Bar props="bg-creamish" />
-              <Typography
-                variant="caption"
-                className="italic text-base text-center lg:text-lg text-gray-400"
-              >
-                A solution to big or small problems
-              </Typography>
             </Box>
           </Grid2>
           <Grid2 xs={12} md={7}>

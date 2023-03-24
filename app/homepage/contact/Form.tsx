@@ -7,6 +7,8 @@ import axios from 'axios';
 import * as Yup from 'yup';
 import { LoadingButton } from '@mui/lab';
 import CustomSnackbar from '../../components/CustomSnackbar';
+import Typography from '@mui/material/Typography';
+import SendIcon from '@mui/icons-material/Send';
 
 const Form = () => {
   const initialFormData = {
@@ -30,7 +32,7 @@ const Form = () => {
   const emailSchema = Yup.object({
     name: Yup.string().required('Name is required'),
     email: Yup.string().email().required('Email is required'),
-    message: Yup.string().required('Message is required'),
+    message: Yup.string().min(15).max(300).required('Message is required'),
   });
 
   const handleFormSubmit = async (data: any) => {
@@ -135,6 +137,16 @@ const Form = () => {
               error={touched?.message && Boolean(errors?.message)}
               helperText={touched?.message && errors?.message}
             />
+            <Typography
+              variant='caption'
+              className={`${
+                values?.message?.length < 15 || values?.message?.length > 300
+                  ? 'text-red-400'
+                  : 'text-gray-00'
+              }`}
+            >
+              {`${Math.floor(values?.message?.length)} / 300`}
+            </Typography>
           </Grid>
 
           <LoadingButton
@@ -143,6 +155,7 @@ const Form = () => {
             className='shadow-lg bg-creamish text-gray-700 border-white hover:bg-darkish hover:text-gray-300 hover:border-darkish hover:font-bold hover:border-1'
             variant='outlined'
             disabled={!(isValid && dirty)}
+            startIcon={<SendIcon />}
             fullWidth
             loadingPosition='start'
           >
