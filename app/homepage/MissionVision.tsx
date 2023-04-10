@@ -12,7 +12,7 @@ const MissionVision = () => {
         className='flex justify-center items-center h-screen w-full text-white py-24 relative z-20'
         id='missionvision text-center'
       >
-        <Box className='h-full w-full bg-gradient-to-b from-black to-transparent lg:to-gray-300 opacity-90 md:to-transparent absolute inset-0' />
+        <Box className='h-full w-full bg-gradient-to-b from-black to-transparent lg:to-gray-300 opacity-50 md:to-transparent absolute inset-0' />
         <Container className='flex flex-col lg:flex-row justify-evenly items-start lg:items-center relative z-30 gap-10' >
           <Stack className='flex items-center text-center lg:w-1/2' spacing={2}>
             <Typography

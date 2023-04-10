@@ -233,17 +233,17 @@ const Projects = () => {
               <Grid2 xs={12} md={7}>
                 <Stack direction='column' gap={4}>
                   <Image
-                    src='/images/projects/before-after/back-porch-1.png'
+                    src='/images/projects/before-after/back-porch-3.png'
                     alt='Before back porch renovation'
                     width={700}
                     height={700}
                   />
-                  <Image
+                  {/* <Image
                     src='/images/projects/before-after/back-porch-2.png'
                     alt='Before back porch renovation'
                     width={700}
                     height={700}
-                  />
+                  /> */}
                 </Stack>
               </Grid2>
               <Grid2 xs={12} md={5} className='pt-0 lg:pt-10'>
